@@ -11,6 +11,7 @@ import GameStats from './GameStats';
 import AddBetForm from './AddBetForm';
 import Bets from './Bets';
 import BetComments from './BetComments';
+import BetEditForm from './BetEditForm';
 
 function App() {
   const [username, setUsername] = useState("")
@@ -30,8 +31,9 @@ function App() {
             <Route exact path="/games/new" element={<AddGameForm />}/>
             <Route path="/games/:id" element={<GameStats />}/>
             <Route path="/games/:id/bets" element={<Bets />} />
-            <Route path="/bets/:id/comments" element={<BetComments />} />
             <Route path="/games/:id/bets/new" element={<AddBetForm />} />
+            <Route path="/bets/:id/edit" element={<BetEditForm />} />
+            <Route path="/bets/:id/comments" element={<BetComments />} />
           </Routes>
       </UserProvider>
     </div>

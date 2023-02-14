@@ -82,6 +82,17 @@ export function reducer(state, action) {
             },
             bets: updatedBets
         }
+    case 'updateBet': //payload is editedBetObj passed into function from PATCH request
+        const editedUserBets = state.user.bets.map((bet) => bet.id === action.payload.id ? action.payload : bet)
+        const editedBets = state.bets.map((bet) => bet.id === action.payload ? action.payload : bet)
+        return {
+            ...state,
+            user: {
+                ...state.user,
+                bets: editedUserBets
+            },
+            bets: editedBets
+        }
     default:
   }
 }

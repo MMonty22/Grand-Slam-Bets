@@ -14,11 +14,16 @@ function Home() {
         return <ul key={bet.id}>
             <li>Bet: {bet.description}</li>
             <li>Odds: {bet.odds}</li>
+            <button onClick={() => navigateToBetEditForm(bet.id)}>✏️</button>
     </ul>})
 
     const userComments = state.user?.comments?.map((com) => <ul key={com.id}>
         <li>{com.text}</li>
     </ul>)
+
+    function navigateToBetEditForm(betID) {
+        navigate(`/bets/${betID}/edit`)
+    }
 
     function handleShowBets() {
         setShowBets(!showBets)
