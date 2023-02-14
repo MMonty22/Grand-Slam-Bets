@@ -93,6 +93,19 @@ export function reducer(state, action) {
             },
             bets: editedBets
         }
+    case 'deleteBet':
+        const betsMinusDeletedOne = state.bets.filter((bet)=> bet.id !== action.payload)
+        //console.log('betsMinus', betsMinusDeletedOne)
+        const userBetsMinusDeletedOne = state.user.bets.filter((bet)=> bet.id !== action.payload)
+        //console.log('userBetsMinus', userBetsMinusDeletedOne)
+        return {
+            ...state,
+            user: {
+                ...state.user,
+                bets: userBetsMinusDeletedOne
+            },
+            bets: betsMinusDeletedOne
+        }
     default:
   }
 }

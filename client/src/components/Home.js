@@ -15,6 +15,7 @@ function Home() {
             <li>Bet: {bet.description}</li>
             <li>Odds: {bet.odds}</li>
             <button onClick={() => navigateToBetEditForm(bet.id)}>✏️</button>
+            <button onClick={() => handleBetDelete(bet.id)}>❌</button>
     </ul>})
 
     const userComments = state.user?.comments?.map((com) => <ul key={com.id}>
@@ -23,6 +24,17 @@ function Home() {
 
     function navigateToBetEditForm(betID) {
         navigate(`/bets/${betID}/edit`)
+    }
+
+    function handleBetDelete(betID) {
+        fetch(`/bets/${betID}`, {
+            method: 'DELETE',
+        })
+        .then(res => removeBet(betID))
+    }
+
+    function removeBet(betID) {
+        dispatch({type: "deleteBet", payload: betID})
     }
 
     function handleShowBets() {
