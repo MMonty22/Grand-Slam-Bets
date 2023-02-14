@@ -62,6 +62,15 @@ export function reducer(state, action) {
             ...state,
             comments: action.payload
         }
+    case 'createGame':
+        const updatedGames = [...state.games, action.payload]
+        return {
+            ...state,
+            user: {
+                ...state.user
+            },
+            games: updatedGames,
+        }
     default:
   }
 }
