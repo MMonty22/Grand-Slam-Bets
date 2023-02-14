@@ -9,6 +9,7 @@ class GamesController < ApplicationController
     def create
         game = Game.create(game_params)
         game.assign_players
+        game.handle_calculations
         if game.valid?
             render json: game, status: :created
         else
@@ -19,6 +20,6 @@ class GamesController < ApplicationController
     private
 
     def game_params
-        params.permit(:away_team, :home_team)
+        params.permit(:away_team, :home_team, :away_team_SP, :home_team_SP)
     end
 end

@@ -35,149 +35,149 @@ class Game < ApplicationRecord
 
     def calc_ex_woba
         @away_hitters.each do |hit|
-            if @home_pitcher.throw_hand == 'L' && hit.bat_hand == 'L'
-                hit.update(ex_woba_vs_l: (@home_pitcher.woba_vs_l/AVG_WOBA) * hit.woba_vs_l)
-            elsif @home_pitcher.throw_hand == 'L' && hit.bat_hand == 'R'
-                hit.update(ex_woba_vs_l: (@home_pitcher.woba_vs_r/AVG_WOBA) * hit.woba_vs_l)
-            elsif @home_pitcher.throw_hand == 'L' && hit.bat_hand == 'S'
-                hit.update(ex_woba_vs_l: (@home_pitcher.woba_vs_r/AVG_WOBA) * hit.woba_vs_l)
-            elsif @home_pitcher.throw_hand == 'R' && hit.bat_hand == 'L'
-                hit.update(ex_woba_vs_r: (@home_pitcher.woba_vs_l/AVG_WOBA) * hit.woba_vs_r)
-            elsif @home_pitcher.throw_hand == 'R' && hit.bat_hand == 'R'
-                hit.update(ex_woba_vs_r: (@home_pitcher.woba_vs_r/AVG_WOBA) * hit.woba_vs_r)
-            elsif @home_pitcher.throw_hand == 'R' && hit.bat_hand == 'S'
-                hit.update(ex_woba_vs_r: (@home_pitcher.woba_vs_l/AVG_WOBA) * hit.woba_vs_r) 
+            if @home_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'L'
+                hit.update(ex_woba_vs_l: (@home_pitcher[0].woba_vs_l/AVG_WOBA) * hit.woba_vs_l)
+            elsif @home_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'R'
+                hit.update(ex_woba_vs_l: (@home_pitcher[0].woba_vs_r/AVG_WOBA) * hit.woba_vs_l)
+            elsif @home_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'S'
+                hit.update(ex_woba_vs_l: (@home_pitcher[0].woba_vs_r/AVG_WOBA) * hit.woba_vs_l)
+            elsif @home_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'L'
+                hit.update(ex_woba_vs_r: (@home_pitcher[0].woba_vs_l/AVG_WOBA) * hit.woba_vs_r)
+            elsif @home_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'R'
+                hit.update(ex_woba_vs_r: (@home_pitcher[0].woba_vs_r/AVG_WOBA) * hit.woba_vs_r)
+            elsif @home_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'S'
+                hit.update(ex_woba_vs_r: (@home_pitcher[0].woba_vs_l/AVG_WOBA) * hit.woba_vs_r) 
             end
         end
         @home_hitters.each do |hit|
-            if @away_pitcher.throw_hand == 'L' && hit.bat_hand == 'L'
-                hit.update(ex_woba_vs_l: (@away_pitcher.woba_vs_l/AVG_WOBA) * hit.woba_vs_l)
-            elsif @away_pitcher.throw_hand == 'L' && hit.bat_hand == 'R'    
-                hit.update(ex_woba_vs_l: (@away_pitcher.woba_vs_r/AVG_WOBA) * hit.woba_vs_l)
-            elsif @away_pitcher.throw_hand == 'L' && hit.bat_hand == 'S'
-                hit.update(ex_woba_vs_l: (@away_pitcher.woba_vs_r/AVG_WOBA) * hit.woba_vs_l)
-            elsif @away_pitcher.throw_hand == 'R' && hit.bat_hand == 'L'
-                hit.update(ex_woba_vs_r: (@away_pitcher.woba_vs_l/AVG_WOBA) * hit.woba_vs_r)
-            elsif @away_pitcher.throw_hand == 'R' && hit.bat_hand == 'R'    
-                hit.update(ex_woba_vs_r: (@away_pitcher.woba_vs_r/AVG_WOBA) * hit.woba_vs_r)
-            elsif @away_pitcher.throw_hand == 'R' && hit.bat_hand == 'S'
-                hit.update(ex_woba_vs_r: (@away_pitcher.woba_vs_l/AVG_WOBA) * hit.woba_vs_r)
+            if @away_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'L'
+                hit.update(ex_woba_vs_l: (@away_pitcher[0].woba_vs_l/AVG_WOBA) * hit.woba_vs_l)
+            elsif @away_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'R'    
+                hit.update(ex_woba_vs_l: (@away_pitcher[0].woba_vs_r/AVG_WOBA) * hit.woba_vs_l)
+            elsif @away_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'S'
+                hit.update(ex_woba_vs_l: (@away_pitcher[0].woba_vs_r/AVG_WOBA) * hit.woba_vs_l)
+            elsif @away_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'L'
+                hit.update(ex_woba_vs_r: (@away_pitcher[0].woba_vs_l/AVG_WOBA) * hit.woba_vs_r)
+            elsif @away_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'R'    
+                hit.update(ex_woba_vs_r: (@away_pitcher[0].woba_vs_r/AVG_WOBA) * hit.woba_vs_r)
+            elsif @away_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'S'
+                hit.update(ex_woba_vs_r: (@away_pitcher[0].woba_vs_l/AVG_WOBA) * hit.woba_vs_r)
             end
         end
     end
 
     def calc_ex_iso
         @away_hitters.each do |hit|
-            if @home_pitcher.throw_hand == 'L' && hit.bat_hand == 'L'
-                hit.update(ex_iso_vs_l: (@home_pitcher.iso_vs_l/AVG_ISO) * hit.iso_vs_l)
-            elsif @home_pitcher.throw_hand == 'L' && hit.bat_hand == 'R'
-                hit.update(ex_iso_vs_l: (@home_pitcher.iso_vs_r/AVG_ISO) * hit.iso_vs_l)
-            elsif @home_pitcher.throw_hand == 'L' && hit.bat_hand == 'S'
-                hit.update(ex_iso_vs_l: (@home_pitcher.iso_vs_r/AVG_ISO) * hit.iso_vs_l)
-            elsif @home_pitcher.throw_hand == 'R' && hit.bat_hand == 'L'
-                hit.update(ex_iso_vs_r: (@home_pitcher.iso_vs_l/AVG_ISO) * hit.iso_vs_r)
-            elsif @home_pitcher.throw_hand == 'R' && hit.bat_hand == 'R'
-                hit.update(ex_iso_vs_r: (@home_pitcher.iso_vs_r/AVG_ISO) * hit.iso_vs_r)
-            elsif @home_pitcher.throw_hand == 'R' && hit.bat_hand == 'S'
-                hit.update(ex_iso_vs_r: (@home_pitcher.iso_vs_l/AVG_ISO) * hit.iso_vs_r) 
+            if @home_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'L'
+                hit.update(ex_iso_vs_l: (@home_pitcher[0].iso_vs_l/AVG_ISO) * hit.iso_vs_l)
+            elsif @home_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'R'
+                hit.update(ex_iso_vs_l: (@home_pitcher[0].iso_vs_r/AVG_ISO) * hit.iso_vs_l)
+            elsif @home_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'S'
+                hit.update(ex_iso_vs_l: (@home_pitcher[0].iso_vs_r/AVG_ISO) * hit.iso_vs_l)
+            elsif @home_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'L'
+                hit.update(ex_iso_vs_r: (@home_pitcher[0].iso_vs_l/AVG_ISO) * hit.iso_vs_r)
+            elsif @home_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'R'
+                hit.update(ex_iso_vs_r: (@home_pitcher[0].iso_vs_r/AVG_ISO) * hit.iso_vs_r)
+            elsif @home_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'S'
+                hit.update(ex_iso_vs_r: (@home_pitcher[0].iso_vs_l/AVG_ISO) * hit.iso_vs_r) 
             end
         end
         @home_hitters.each do |hit|
-            if @away_pitcher.throw_hand == 'L' && hit.bat_hand == 'L'
-                hit.update(ex_iso_vs_l: (@away_pitcher.iso_vs_l/AVG_ISO) * hit.iso_vs_l)
-            elsif @away_pitcher.throw_hand == 'L' && hit.bat_hand == 'R'    
-                hit.update(ex_iso_vs_l: (@away_pitcher.iso_vs_r/AVG_ISO) * hit.iso_vs_l)
-            elsif @away_pitcher.throw_hand == 'L' && hit.bat_hand == 'S'
-                hit.update(ex_iso_vs_l: (@away_pitcher.iso_vs_r/AVG_ISO) * hit.iso_vs_l)
-            elsif @away_pitcher.throw_hand == 'R' && hit.bat_hand == 'L'
-                hit.update(ex_iso_vs_r: (@away_pitcher.iso_vs_l/AVG_ISO) * hit.iso_vs_r)
-            elsif @away_pitcher.throw_hand == 'R' && hit.bat_hand == 'R'    
-                hit.update(ex_iso_vs_r: (@away_pitcher.iso_vs_r/AVG_ISO) * hit.iso_vs_r)
-            elsif @away_pitcher.throw_hand == 'R' && hit.bat_hand == 'S'
-                hit.update(ex_iso_vs_r: (@away_pitcher.iso_vs_l/AVG_ISO) * hit.iso_vs_r)
+            if @away_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'L'
+                hit.update(ex_iso_vs_l: (@away_pitcher[0].iso_vs_l/AVG_ISO) * hit.iso_vs_l)
+            elsif @away_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'R'    
+                hit.update(ex_iso_vs_l: (@away_pitcher[0].iso_vs_r/AVG_ISO) * hit.iso_vs_l)
+            elsif @away_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'S'
+                hit.update(ex_iso_vs_l: (@away_pitcher[0].iso_vs_r/AVG_ISO) * hit.iso_vs_l)
+            elsif @away_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'L'
+                hit.update(ex_iso_vs_r: (@away_pitcher[0].iso_vs_l/AVG_ISO) * hit.iso_vs_r)
+            elsif @away_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'R'    
+                hit.update(ex_iso_vs_r: (@away_pitcher[0].iso_vs_r/AVG_ISO) * hit.iso_vs_r)
+            elsif @away_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'S'
+                hit.update(ex_iso_vs_r: (@away_pitcher[0].iso_vs_l/AVG_ISO) * hit.iso_vs_r)
             end
         end
     end
 
     def calc_ex_hc
         @away_hitters.each do |hit|
-            if @home_pitcher.throw_hand == 'L' && hit.bat_hand == 'L'
-                hit.update(ex_hard_contact_vs_l: (@home_pitcher.hard_contact_vs_l/AVG_HARD_CONTACT) * hit.hard_contact_vs_l)
-            elsif @home_pitcher.throw_hand == 'L' && hit.bat_hand == 'R'
-                hit.update(ex_hard_contact_vs_l: (@home_pitcher.hard_contact_vs_r/AVG_HARD_CONTACT) * hit.hard_contact_vs_l)
-            elsif @home_pitcher.throw_hand == 'L' && hit.bat_hand == 'S'
-                hit.update(ex_hard_contact_vs_l: (@home_pitcher.hard_contact_vs_r/AVG_HARD_CONTACT) * hit.hard_contact_vs_l)
-            elsif @home_pitcher.throw_hand == 'R' && hit.bat_hand == 'L'
-                hit.update(ex_hard_contact_vs_r: (@home_pitcher.hard_contact_vs_l/AVG_HARD_CONTACT) * hit.hard_contact_vs_r)
-            elsif @home_pitcher.throw_hand == 'R' && hit.bat_hand == 'R'
-                hit.update(ex_hard_contact_vs_r: (@home_pitcher.hard_contact_vs_r/AVG_HARD_CONTACT) * hit.hard_contact_vs_r)
-            elsif @home_pitcher.throw_hand == 'R' && hit.bat_hand == 'S'
-                hit.update(ex_hard_contact_vs_r: (@home_pitcher.hard_contact_vs_l/AVG_HARD_CONTACT) * hit.hard_contact_vs_r) 
+            if @home_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'L'
+                hit.update(ex_hard_contact_vs_l: (@home_pitcher[0].hard_contact_pct_vs_l/AVG_HARD_CONTACT) * hit.hard_contact_pct_vs_l)
+            elsif @home_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'R'
+                hit.update(ex_hard_contact_vs_l: (@home_pitcher[0].hard_contact_pct_vs_r/AVG_HARD_CONTACT) * hit.hard_contact_pct_vs_l)
+            elsif @home_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'S'
+                hit.update(ex_hard_contact_vs_l: (@home_pitcher[0].hard_contact_pct_vs_r/AVG_HARD_CONTACT) * hit.hard_contact_pct_vs_l)
+            elsif @home_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'L'
+                hit.update(ex_hard_contact_vs_r: (@home_pitcher[0].hard_contact_pct_vs_l/AVG_HARD_CONTACT) * hit.hard_contact_pct_vs_r)
+            elsif @home_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'R'
+                hit.update(ex_hard_contact_vs_r: (@home_pitcher[0].hard_contact_pct_vs_r/AVG_HARD_CONTACT) * hit.hard_contact_pct_vs_r)
+            elsif @home_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'S'
+                hit.update(ex_hard_contact_vs_r: (@home_pitcher[0].hard_contact_pct_vs_l/AVG_HARD_CONTACT) * hit.hard_contact_pct_vs_r) 
             end
         end
         @home_hitters.each do |hit|
-            if @away_pitcher.throw_hand == 'L' && hit.bat_hand == 'L'
-                hit.update(ex_hard_contact_vs_l: (@away_pitcher.hard_contact_vs_l/AVG_HARD_CONTACT) * hit.hard_contact_vs_l)
-            elsif @away_pitcher.throw_hand == 'L' && hit.bat_hand == 'R'    
-                hit.update(ex_hard_contact_vs_l: (@away_pitcher.hard_contact_vs_r/AVG_HARD_CONTACT) * hit.hard_contact_vs_l)
-            elsif @away_pitcher.throw_hand == 'L' && hit.bat_hand == 'S'
-                hit.update(ex_hard_contact_vs_l: (@away_pitcher.hard_contact_vs_r/AVG_HARD_CONTACT) * hit.hard_contact_vs_l)
-            elsif @away_pitcher.throw_hand == 'R' && hit.bat_hand == 'L'
-                hit.update(ex_hard_contact_vs_r: (@away_pitcher.hard_contact_vs_l/AVG_HARD_CONTACT) * hit.hard_contact_vs_r)
-            elsif @away_pitcher.throw_hand == 'R' && hit.bat_hand == 'R'    
-                hit.update(ex_hard_contact_vs_r: (@away_pitcher.hard_contact_vs_r/AVG_HARD_CONTACT) * hit.hard_contact_vs_r)
-            elsif @away_pitcher.throw_hand == 'R' && hit.bat_hand == 'S'
-                hit.update(ex_hard_contact_vs_r: (@away_pitcher.hard_contact_vs_l/AVG_HARD_CONTACT) * hit.hard_contact_vs_r)
+            if @away_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'L'
+                hit.update(ex_hard_contact_vs_l: (@away_pitcher[0].hard_contact_pct_vs_l/AVG_HARD_CONTACT) * hit.hard_contact_pct_vs_l)
+            elsif @away_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'R'    
+                hit.update(ex_hard_contact_vs_l: (@away_pitcher[0].hard_contact_pct_vs_r/AVG_HARD_CONTACT) * hit.hard_contact_pct_vs_l)
+            elsif @away_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'S'
+                hit.update(ex_hard_contact_vs_l: (@away_pitcher[0].hard_contact_pct_vs_r/AVG_HARD_CONTACT) * hit.hard_contact_pct_vs_l)
+            elsif @away_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'L'
+                hit.update(ex_hard_contact_vs_r: (@away_pitcher[0].hard_contact_pct_vs_l/AVG_HARD_CONTACT) * hit.hard_contact_pct_vs_r)
+            elsif @away_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'R'    
+                hit.update(ex_hard_contact_vs_r: (@away_pitcher[0].hard_contact_pct_vs_r/AVG_HARD_CONTACT) * hit.hard_contact_pct_vs_r)
+            elsif @away_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'S'
+                hit.update(ex_hard_contact_vs_r: (@away_pitcher[0].hard_contact_pct_vs_l/AVG_HARD_CONTACT) * hit.hard_contact_pct_vs_r)
             end
         end
     end
 
     def calc_ex_hr_per_fb
         @away_hitters.each do |hit|
-            if @home_pitcher.throw_hand == 'L' && hit.bat_hand == 'L'
-                hit.update(ex_hr_per_fb_vs_l: (@home_pitcher.hr_per_fb_vs_l/AVG_HR_PER_FB) * hit.hr_per_fb_vs_l)
-            elsif @home_pitcher.throw_hand == 'L' && hit.bat_hand == 'R'
-                hit.update(ex_hr_per_fb_vs_l: (@home_pitcher.hr_per_fb_vs_r/AVG_HR_PER_FB) * hit.hr_per_fb_vs_l)
-            elsif @home_pitcher.throw_hand == 'L' && hit.bat_hand == 'S'
-                hit.update(ex_hr_per_fb_vs_l: (@home_pitcher.hr_per_fb_vs_r/AVG_HR_PER_FB) * hit.hr_per_fb_vs_l)
-            elsif @home_pitcher.throw_hand == 'R' && hit.bat_hand == 'L'
-                hit.update(ex_hr_per_fb_vs_r: (@home_pitcher.hr_per_fb_vs_l/AVG_HR_PER_FB) * hit.hr_per_fb_vs_r)
-            elsif @home_pitcher.throw_hand == 'R' && hit.bat_hand == 'R'
-                hit.update(ex_hr_per_fb_vs_r: (@home_pitcher.hr_per_fb_vs_r/AVG_HR_PER_FB) * hit.hr_per_fb_vs_r)
-            elsif @home_pitcher.throw_hand == 'R' && hit.bat_hand == 'S'
-                hit.update(ex_hr_per_fb_vs_r: (@home_pitcher.hr_per_fb_vs_l/AVG_HR_PER_FB) * hit.hr_per_fb_vs_r) 
+            if @home_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'L'
+                hit.update(ex_hr_per_fb_vs_l: (@home_pitcher[0].hr_per_fb_vs_l/AVG_HR_PER_FB) * hit.hr_per_fb_vs_l)
+            elsif @home_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'R'
+                hit.update(ex_hr_per_fb_vs_l: (@home_pitcher[0].hr_per_fb_vs_r/AVG_HR_PER_FB) * hit.hr_per_fb_vs_l)
+            elsif @home_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'S'
+                hit.update(ex_hr_per_fb_vs_l: (@home_pitcher[0].hr_per_fb_vs_r/AVG_HR_PER_FB) * hit.hr_per_fb_vs_l)
+            elsif @home_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'L'
+                hit.update(ex_hr_per_fb_vs_r: (@home_pitcher[0].hr_per_fb_vs_l/AVG_HR_PER_FB) * hit.hr_per_fb_vs_r)
+            elsif @home_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'R'
+                hit.update(ex_hr_per_fb_vs_r: (@home_pitcher[0].hr_per_fb_vs_r/AVG_HR_PER_FB) * hit.hr_per_fb_vs_r)
+            elsif @home_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'S'
+                hit.update(ex_hr_per_fb_vs_r: (@home_pitcher[0].hr_per_fb_vs_l/AVG_HR_PER_FB) * hit.hr_per_fb_vs_r) 
             end
         end
         @home_hitters.each do |hit|
-            if @away_pitcher.throw_hand == 'L' && hit.bat_hand == 'L'
-                hit.update(ex_hr_per_fb_vs_l: (@away_pitcher.hr_per_fb_vs_l/AVG_HR_PER_FB) * hit.hr_per_fb_vs_l)
-            elsif @away_pitcher.throw_hand == 'L' && hit.bat_hand == 'R'    
-                hit.update(ex_hr_per_fb_vs_l: (@away_pitcher.hr_per_fb_vs_r/AVG_HR_PER_FB) * hit.hr_per_fb_vs_l)
-            elsif @away_pitcher.throw_hand == 'L' && hit.bat_hand == 'S'
-                hit.update(ex_hr_per_fb_vs_l: (@away_pitcher.hr_per_fb_vs_r/AVG_HR_PER_FB) * hit.hr_per_fb_vs_l)
-            elsif @away_pitcher.throw_hand == 'R' && hit.bat_hand == 'L'
-                hit.update(ex_hr_per_fb_vs_r: (@away_pitcher.hr_per_fb_vs_l/AVG_HR_PER_FB) * hit.hr_per_fb_vs_r)
-            elsif @away_pitcher.throw_hand == 'R' && hit.bat_hand == 'R'    
-                hit.update(ex_hr_per_fb_vs_r: (@away_pitcher.hr_per_fb_vs_r/AVG_HR_PER_FB) * hit.hr_per_fb_vs_r)
-            elsif @away_pitcher.throw_hand == 'R' && hit.bat_hand == 'S'
-                hit.update(ex_hr_per_fb_vs_r: (@away_pitcher.hr_per_fb_vs_l/AVG_HR_PER_FB) * hit.hr_per_fb_vs_r)
+            if @away_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'L'
+                hit.update(ex_hr_per_fb_vs_l: (@away_pitcher[0].hr_per_fb_vs_l/AVG_HR_PER_FB) * hit.hr_per_fb_vs_l)
+            elsif @away_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'R'    
+                hit.update(ex_hr_per_fb_vs_l: (@away_pitcher[0].hr_per_fb_vs_r/AVG_HR_PER_FB) * hit.hr_per_fb_vs_l)
+            elsif @away_pitcher[0].throw_hand == 'L' && hit.bat_hand == 'S'
+                hit.update(ex_hr_per_fb_vs_l: (@away_pitcher[0].hr_per_fb_vs_r/AVG_HR_PER_FB) * hit.hr_per_fb_vs_l)
+            elsif @away_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'L'
+                hit.update(ex_hr_per_fb_vs_r: (@away_pitcher[0].hr_per_fb_vs_l/AVG_HR_PER_FB) * hit.hr_per_fb_vs_r)
+            elsif @away_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'R'    
+                hit.update(ex_hr_per_fb_vs_r: (@away_pitcher[0].hr_per_fb_vs_r/AVG_HR_PER_FB) * hit.hr_per_fb_vs_r)
+            elsif @away_pitcher[0].throw_hand == 'R' && hit.bat_hand == 'S'
+                hit.update(ex_hr_per_fb_vs_r: (@away_pitcher[0].hr_per_fb_vs_l/AVG_HR_PER_FB) * hit.hr_per_fb_vs_r)
             end
         end
     end
 
     def calc_matchup_rating
         @away_hitters.each do |hit|
-            if @home_pitcher.throw_hand == 'L'
-                hit.update(matchup_rating_vs_l: (((hit.ex_woba_vs_l)*0.2) + ((hit.wrc_plus_vs_l/1000)*0.2) + ((hit.ex_hard_contact_vs_l + hit.ex_iso_vs_l)*0.5) + (hit.ex_hit_per_fb_vs_l)*0.1))
-            elsif @home_pitcher.throw_hand == 'R'
-                hit.update(matchup_rating_vs_r: (((hit.ex_woba_vs_r)*0.2) + ((hit.wrc_plus_vs_r/1000)*0.2) + ((hit.ex_hard_contact_vs_r + hit.ex_iso_vs_r)*0.5) + (hit.ex_hit_per_fb_vs_r)*0.1))
+            if @home_pitcher[0].throw_hand == 'L'
+                hit.update(matchup_rating_vs_l: (((hit.ex_woba_vs_l)*0.2) + ((hit.wrc_plus_vs_l/1000)*0.2) + ((hit.ex_hard_contact_vs_l + hit.ex_iso_vs_l)*0.5) + (hit.ex_hr_per_fb_vs_l)*0.1))
+            elsif @home_pitcher[0].throw_hand == 'R'
+                hit.update(matchup_rating_vs_r: (((hit.ex_woba_vs_r)*0.2) + ((hit.wrc_plus_vs_r/1000)*0.2) + ((hit.ex_hard_contact_vs_r + hit.ex_iso_vs_r)*0.5) + (hit.ex_hr_per_fb_vs_r)*0.1))
             end
         end
         @home_hitters.each do |hit|
-            if @away_pitcher.throw_hand == 'L'
-                hit.update(matchup_rating_vs_l: (((hit.ex_woba_vs_l)*0.2) + ((hit.wrc_plus_vs_l/1000)*0.2) + ((hit.ex_hard_contact_vs_l + hit.ex_iso_vs_l)*0.5) + (hit.ex_hit_per_fb_vs_l)*0.1))
-            elsif @away_pitcher.throw_hand == 'R'
-                hit.update(matchup_rating_vs_r: (((hit.ex_woba_vs_r)*0.2) + ((hit.wrc_plus_vs_r/1000)*0.2) + ((hit.ex_hard_contact_vs_r + hit.ex_iso_vs_r)*0.5) + (hit.ex_hit_per_fb_vs_r)*0.1))
+            if @away_pitcher[0].throw_hand == 'L'
+                hit.update(matchup_rating_vs_l: (((hit.ex_woba_vs_l)*0.2) + ((hit.wrc_plus_vs_l/1000)*0.2) + ((hit.ex_hard_contact_vs_l + hit.ex_iso_vs_l)*0.5) + (hit.ex_hr_per_fb_vs_l)*0.1))
+            elsif @away_pitcher[0].throw_hand == 'R'
+                hit.update(matchup_rating_vs_r: (((hit.ex_woba_vs_r)*0.2) + ((hit.wrc_plus_vs_r/1000)*0.2) + ((hit.ex_hard_contact_vs_r + hit.ex_iso_vs_r)*0.5) + (hit.ex_hr_per_fb_vs_r)*0.1))
             end
         end
     end
