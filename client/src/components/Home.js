@@ -20,10 +20,16 @@ function Home() {
 
     const userComments = state.user?.comments?.map((com) => <ul key={com.id}>
         <li>{com.text}</li>
+        <button onClick={() => navigateToCommentEditForm(com.id)}>✏️</button>
+        <button onClick={() => handleCommentDelete(com.id)}>❌</button>
     </ul>)
 
     function navigateToBetEditForm(betID) {
         navigate(`/bets/${betID}/edit`)
+    }
+
+    function navigateToCommentEditForm(comID) {
+        navigate(`/comments/${comID}/edit`)
     }
 
     function handleBetDelete(betID) {
@@ -33,8 +39,19 @@ function Home() {
         .then(res => removeBet(betID))
     }
 
+    function handleCommentDelete(comID) {
+        fetch(`/comments/${comID}`, {
+            method: 'DELETE',
+        })
+        .then(res => removeComment(comID))
+    }
+
     function removeBet(betID) {
         dispatch({type: "deleteBet", payload: betID})
+    }
+
+    function removeComment(comID) {
+        dispatch({type: "deleteComment", payload: comID})
     }
 
     function handleShowBets() {

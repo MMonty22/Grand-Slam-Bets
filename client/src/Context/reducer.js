@@ -106,6 +106,17 @@ export function reducer(state, action) {
             },
             bets: betsMinusDeletedOne
         }
+    case 'deleteComment':
+        const commentsMinusDeletedOne = state.comments.filter((com)=> com.id !== action.payload)
+        const userCommentsMinusDeletedOne = state.user.comments.filter((com)=> com.id !== action.payload)
+        return {
+            ...state,
+            user: {
+                ...state.user,
+                comments: userCommentsMinusDeletedOne
+            },
+            comments: commentsMinusDeletedOne
+        }
     default:
   }
 }
