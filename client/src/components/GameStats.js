@@ -66,35 +66,35 @@ function GameStats() {
                         <td>{hit.team}</td>
                         <td>{hit.bat_hand}</td>
                         <td>{hit.pa_vs_l}</td>
-                        <td>{hit.woba_vs_l}</td>
-                        <td>{hit.ex_woba_vs_l}</td>
-                        <td>{hit.iso_vs_l}</td>
-                        <td>{hit.ex_iso_vs_l}</td>
-                        <td>{hit.hard_contact_pct_vs_l}</td>
-                        <td>{hit.ex_hard_contact_vs_l}</td>
+                        <td>{hit.woba_vs_l.toFixed(3)}</td>
+                        <td>{hit.ex_woba_vs_l.toFixed(3)}</td>
+                        <td>{hit.iso_vs_l.toFixed(3)}</td>
+                        <td>{hit.ex_iso_vs_l.toFixed(3)}</td>
+                        <td>{hit.hard_contact_pct_vs_l.toFixed(3)}</td>
+                        <td>{hit.ex_hard_contact_vs_l.toFixed(3)}</td>
                         <td>{hit.wrc_plus_vs_l}</td>
-                        <td>{hit.hr_per_fb_vs_l}</td>
-                        <td>{hit.ex_hr_per_fb_vs_l}</td>
-                        <td>{hit.fbpct_vs_l}</td>
-                        <td>{hit.gbpct_vs_l}</td>
-                        <td>{hit.babip_vs_l}</td>
-                        <td>{hit.kpct_vs_l}</td>
-                        <td>{hit.matchup_rating_vs_l}</td>
-                        <td>{hit.pa_vs_r}</td>
-                        <td>{hit.woba_vs_r}</td>
-                        <td>{hit.ex_woba_vs_r}</td>
-                        <td>{hit.iso_vs_r}</td>
-                        <td>{hit.ex_iso_vs_r}</td>
-                        <td>{hit.hard_contact_pct_vs_r}</td>
-                        <td>{hit.ex_hard_contact_vs_r}</td>
+                        <td>{hit.hr_per_fb_vs_l.toFixed(3)}</td>
+                        <td>{hit.ex_hr_per_fb_vs_l.toFixed(3)}</td>
+                        <td>{hit.fbpct_vs_l.toFixed(3)}</td>
+                        <td>{hit.gbpct_vs_l.toFixed(3)}</td>
+                        <td>{hit.babip_vs_l.toFixed(3)}</td>
+                        <td>{hit.kpct_vs_l.toFixed(3)}</td>
+                        <td>{hit.matchup_rating_vs_l.toFixed(3)}</td>
+                        <td>{hit.pa_vs_r.toFixed(3)}</td>
+                        <td>{hit.woba_vs_r.toFixed(3)}</td>
+                        <td>{hit.ex_woba_vs_r.toFixed(3)}</td>
+                        <td>{hit.iso_vs_r.toFixed(3)}</td>
+                        <td>{hit.ex_iso_vs_r.toFixed(3)}</td>
+                        <td>{hit.hard_contact_pct_vs_r.toFixed(3)}</td>
+                        <td>{hit.ex_hard_contact_vs_r.toFixed(3)}</td>
                         <td>{hit.wrc_plus_vs_r}</td>
-                        <td>{hit.hr_per_fb_vs_r}</td>
-                        <td>{hit.ex_hr_per_fb_vs_r}</td>
-                        <td>{hit.fbpct_vs_r}</td>
-                        <td>{hit.gbpct_vs_r}</td>
-                        <td>{hit.babip_vs_r}</td>
-                        <td>{hit.kpct_vs_r}</td>
-                        <td>{hit.matchup_rating_vs_r}</td>
+                        <td>{hit.hr_per_fb_vs_r.toFixed(3)}</td>
+                        <td>{hit.ex_hr_per_fb_vs_r.toFixed(3)}</td>
+                        <td>{hit.fbpct_vs_r.toFixed(3)}</td>
+                        <td>{hit.gbpct_vs_r.toFixed(3)}</td>
+                        <td>{hit.babip_vs_r.toFixed(3)}</td>
+                        <td>{hit.kpct_vs_r.toFixed(3)}</td>
+                        <td>{hit.matchup_rating_vs_r.toFixed(3)}</td>
                     </tr>))}
                 </tbody>
             </table>

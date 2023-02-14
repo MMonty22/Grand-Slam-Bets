@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.loginModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25rem;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 1010;
+  border: 5px solid navy;
+  background-color: lightblue;
+  box-shadow: 3px 3px 10px rgba(0 0 0 / 0.5);
+  text-align: center;
+}
+
+.modalButtons {
+  background-color: white;
+  border: 1px white;
+  margin-right: 9rem;
+  margin-left: 9rem;
+}

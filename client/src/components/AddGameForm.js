@@ -15,7 +15,7 @@ function AddGameForm() {
         home_team_SP: ""
     })
     console.log('formData', formData)
-    
+
     function handleChange(event) {
         setFormData({
             ...formData,
@@ -62,18 +62,18 @@ function AddGameForm() {
             <form className="gameForm" onSubmit={handleSubmit}>
                 <label>Away Team</label>
                 <br></br>
-                <select onChange={handleChange} value={formData.away_team}>
-                    {teamAbbrevitions.map((team) => <option key={team} id="away_team" value={formData.away_team}>{team}</option>)}
+                <select onChange={handleChange} id="away_team" value={formData.away_team}>
+                    {teamAbbrevitions.map((team) => <option key={team} >{team}</option>)}
                 </select>
                 <br></br>
                 <label>Away Team Starting Pitcher</label>
                 <br></br>
-                <input  id="away_team_SP" type="text" placeholder="Ex: Kerry Wood" value={formData.away_team_SP} onChange={handleChange}></input>
+                <input id="away_team_SP" type="text" placeholder="Ex: Kerry Wood" value={formData.away_team_SP} onChange={handleChange}></input>
                 <br></br>
                 <label>Home Team</label>
                 <br></br>
-                <select onChange={handleChange} value={formData.home_team}>
-                    {teamAbbrevitions.map((team) => <option key={team} id="home_team" value={formData.home_team}>{team}</option>)}
+                <select onChange={handleChange} id="home_team" value={formData.home_team}>
+                    {teamAbbrevitions.map((team) => <option key={team} >{team}</option>)}
                 </select>
                 <br></br>
                 <label>Home Team Starting Pitcher</label>
@@ -90,8 +90,8 @@ function AddGameForm() {
             <form className="gameForm" onSubmit={handleSubmit}>
                 <label>Away Team</label>
                 <br></br>
-                <select onChange={handleChange} value={formData.away_team}>
-                    {teamAbbrevitions.map((team) => <option key={team} id="away_team" value={formData.away_team}>{team}</option>)}
+                <select onChange={handleChange} id="away_team" value={formData.away_team}>
+                    {teamAbbrevitions.map((team) => <option key={team}>{team}</option>)}
                 </select>
                 <br></br>
                 <label>Away Team Starting Pitcher</label>
@@ -100,8 +100,8 @@ function AddGameForm() {
                 <br></br>
                 <label>Home Team</label>
                 <br></br>
-                <select onChange={handleChange} value={formData.home_team}>
-                    {teamAbbrevitions.map((team) => <option key={team} id="home_team" value={formData.home_team}>{team}</option>)}
+                <select onChange={handleChange} id="home_team" value={formData.home_team}>
+                    {teamAbbrevitions.map((team) => <option key={team}>{team}</option>)}
                 </select>
                 <br></br>
                 <label>Home Team Starting Pitcher</label>
