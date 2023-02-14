@@ -9,6 +9,7 @@ import Games from './Games';
 import AddGameForm from './AddGameForm';
 import GameStats from './GameStats';
 import AddBetForm from './AddBetForm';
+import Bets from './Bets';
 
 function App() {
   const [username, setUsername] = useState("")
@@ -27,6 +28,7 @@ function App() {
             <Route exact path="/games" element={<Games />}/>
             <Route exact path="/games/new" element={<AddGameForm />}/>
             <Route path="/games/:id" element={<GameStats />}/>
+            <Route path="/games/:id/bets" element={<Bets />} />
             <Route path="/games/:id/bets/new" element={<AddBetForm />} />
           </Routes>
       </UserProvider>
