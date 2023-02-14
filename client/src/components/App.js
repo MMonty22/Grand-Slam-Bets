@@ -12,6 +12,8 @@ import AddBetForm from './AddBetForm';
 import Bets from './Bets';
 import BetComments from './BetComments';
 import BetEditForm from './BetEditForm';
+import AddCommentForm from './AddCommentForm';
+import CommentEditForm from './CommentEditForm';
 
 function App() {
   const [username, setUsername] = useState("")
@@ -34,6 +36,8 @@ function App() {
             <Route path="/games/:id/bets/new" element={<AddBetForm />} />
             <Route path="/bets/:id/edit" element={<BetEditForm />} />
             <Route path="/bets/:id/comments" element={<BetComments />} />
+            <Route path="/bets/:id/comments/new" element={<AddCommentForm />} />
+            <Route path="/comments/:id/edit" element={<CommentEditForm />} />
           </Routes>
       </UserProvider>
     </div>
