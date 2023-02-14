@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import ReactDOM from 'react-dom';
 import {useNavigate} from "react-router-dom"
 import { UserContext } from '../Context/UserContext';
 
@@ -20,16 +21,35 @@ function Games() {
         navigate('/games/new')
     }
 
+    function navigateToLoginPage() {
+        navigate('/login')
+    }
+
+    function navigateToSignUpPage() {
+        navigate('/signup')
+    }
+
     if (state.initialLoad) {
         return <h3 id='loading'>"Loading..."</h3>
     }
-    else
+    else if (state.loggedIn)
     return (
         <div>
             <h3 id="addGame" onClick={() => navigateToAddGameForm()}>Add A Game</h3>
             {gamesInfo}
         </div>
     )
+    else
+    return (ReactDOM.createPortal(
+        <div className='modal'>
+            <div className='loginModal'>
+                <h2>Please Create an Account or Login</h2>
+                <button className='modalButtons' onClick={navigateToSignUpPage}>Create Account</button>
+                <button className='modalButtons' onClick={navigateToLoginPage}>Login</button>
+            </div>
+        </div>,
+        document.getElementById('portal')
+    ))
 }
 
 export default Games
