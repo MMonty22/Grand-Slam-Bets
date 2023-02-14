@@ -19,11 +19,11 @@ function GameStats() {
     }
     
     return (
-        <div>
+        <div className='gameStats'>
             <h1>{relevantGame ? `${relevantGame.away_team} vs ${relevantGame.home_team}` : 'Loading...'}</h1>
             <button onClick={navigateToBets}>See Bets Involving This Game</button>
             <button onClick={navigateToAddBetForm}>Add A Bet For This Game</button>
-            <table>
+            <table className='pitcherTable'>
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -91,7 +91,7 @@ function GameStats() {
                     </tr>))}
                 </tbody>
             </table>
-            <table>
+            <table className='hitterTable'>
                 <thead>
                     <tr>
                         <th>Name</th>
