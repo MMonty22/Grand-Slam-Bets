@@ -80,7 +80,7 @@ function GameStats() {
                         <td>{hit.babip_vs_l.toFixed(3)}</td>
                         <td>{hit.kpct_vs_l.toFixed(3)}</td>
                         <td>{hit.matchup_rating_vs_l.toFixed(3)}</td>
-                        <td>{hit.pa_vs_r.toFixed(3)}</td>
+                        <td>{hit.pa_vs_r}</td>
                         <td>{hit.woba_vs_r.toFixed(3)}</td>
                         <td>{hit.ex_woba_vs_r.toFixed(3)}</td>
                         <td>{hit.iso_vs_r.toFixed(3)}</td>

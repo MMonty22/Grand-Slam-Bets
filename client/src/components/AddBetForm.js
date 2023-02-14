@@ -52,8 +52,8 @@ function AddBetForm() {
         })
     }
 
-    function addBet(newBetObj, id) {
-        dispatch({type: "createBet", payload: newBetObj, id})
+    function addBet(newBetObj) {
+        dispatch({type: "createBet", payload: newBetObj})
     }
 
     if (relevantGame === undefined)

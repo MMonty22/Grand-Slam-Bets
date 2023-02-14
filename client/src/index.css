@@ -12,6 +12,20 @@ code {
     monospace;
 }
 
+.gameCards {
+  justify-content: center;
+  text-align: center;
+  background-color: lightblue;
+  color: navy;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 8rem;
+  height: 2rem;
+  display: inline-grid; /*puts cards horizontal*/
+  margin: 2rem 1rem;
+  box-shadow: 3px 4px #504b55
+}
+
 .loginModal {
   position: fixed;
   top: 50%;

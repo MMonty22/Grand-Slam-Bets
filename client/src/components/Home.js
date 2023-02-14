@@ -10,13 +10,12 @@ function Home() {
     const [showComments, setShowComments] = useState(false)
     //console.log('state', state)
 
-    const userBets = state?.user?.bets?.map((bet) => {
-        return <ul key={bet.id}>
+    const userBets = state.user?.bets?.map((bet) => <ul key={bet.id}>
             <li>Bet: {bet.description}</li>
             <li>Odds: {bet.odds}</li>
             <button onClick={() => navigateToBetEditForm(bet.id)}>✏️</button>
             <button onClick={() => handleBetDelete(bet.id)}>❌</button>
-    </ul>})
+    </ul>)
 
     const userComments = state.user?.comments?.map((com) => <ul key={com.id}>
         <li>{com.text}</li>
