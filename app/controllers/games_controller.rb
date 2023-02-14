@@ -8,6 +8,7 @@ class GamesController < ApplicationController
 
     def create
         game = Game.create(game_params)
+        game.assign_players
         if game.valid?
             render json: game, status: :created
         else

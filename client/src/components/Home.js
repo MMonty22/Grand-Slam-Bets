@@ -65,7 +65,7 @@ function Home() {
             {userComments}
         </div>
     )
-    else if (state.loggedIn)
+    else 
         return (
             <div className='home'>
                 <h2>Welcome, {state.user.username}</h2>

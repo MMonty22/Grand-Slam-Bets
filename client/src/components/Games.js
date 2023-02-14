@@ -23,7 +23,7 @@ function Games() {
     if (state.initialLoad) {
         return <h3 id='loading'>"Loading..."</h3>
     }
-    else if (state.loggedIn)
+    else
     return (
         <div>
             <h3 id="addGame" onClick={() => navigateToAddGameForm()}>Add A Game</h3>
