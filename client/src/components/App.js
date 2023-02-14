@@ -5,6 +5,7 @@ import SignUp from './SignUp';
 import Login from './Login';
 import NavBar from './NavBar'
 import Home from './Home';
+import Games from './Games';
 
 function App() {
   const [username, setUsername] = useState("")
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/signup" element={<SignUp username={username} setUsername={setUsername} password={password} setPassword={setPassword} passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} errors={errors} setErrors={setErrors}/>}/>
           <Route exact path="/login" element={<Login username={username} setUsername={setUsername} password={password} setPassword={setPassword} passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} errors={errors} setErrors={setErrors}/>} />
+          <Route exact path="/games" element={<Games />}/>
         </Routes>
       </UserProvider>
     </div>
