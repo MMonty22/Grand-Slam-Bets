@@ -14,7 +14,8 @@ function AddGameForm() {
         home_team: "",
         home_team_SP: ""
     })
-
+    console.log('formData', formData)
+    
     function handleChange(event) {
         setFormData({
             ...formData,

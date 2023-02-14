@@ -71,6 +71,17 @@ export function reducer(state, action) {
             },
             games: updatedGames,
         }
+    case 'createBet': //payload is newBetObj and id passed into POST request
+        const updatedBets = [...state.bets, action.payload]
+        const updatedUserBets = [...state.user.bets, action.payload.newBetObj]
+        return {
+            ...state,
+            user: {
+                ...state.user,
+                bets: updatedUserBets
+            },
+            bets: updatedBets
+        }
     default:
   }
 }
