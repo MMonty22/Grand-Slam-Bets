@@ -106,6 +106,17 @@ export function reducer(state, action) {
             },
             bets: betsMinusDeletedOne
         }
+    case 'createComment': //payload is newCommentObj passed into function
+        const updatedComments = [...state.comments, action.payload]
+        const updatedUserComments = [...state.user.comments, action.payload]
+        return {
+            ...state,
+            user: {
+                ...state.user,
+                comments: updatedUserComments
+            },
+            comments: updatedComments
+        }
     case 'deleteComment':
         const commentsMinusDeletedOne = state.comments.filter((com)=> com.id !== action.payload)
         const userCommentsMinusDeletedOne = state.user.comments.filter((com)=> com.id !== action.payload)
