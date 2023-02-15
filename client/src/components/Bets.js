@@ -10,12 +10,8 @@ function Bets() {
     const relevantGame = state.games?.find((game) => String(game.id) === String(id))
     //console.log('relevantGame', relevantGame)
 
-    const relevantBets = relevantGame?.bets?.map((bet) =>(
-        <ul className='bets' key={bet.id}>
-            <li>{bet.description}: {bet.odds}</li>
-            <button onClick={() => navigateToCommentForm(bet.id)}>Leave A Comment</button>
-            <button onClick={() => navigateToComments(bet.id)}>See Comments</button>
-    </ul>))
+    const relevantBets = state.bets.filter((bet) => (bet.game_id !== id))
+    //console.log('relevantBets', relevantBets)
     
     function navigateToCommentForm(betID) {
         navigate(`/bets/${betID}/comments/new`)
@@ -28,7 +24,12 @@ function Bets() {
     return (
         <div>
             <h2 className='headers'>{relevantGame ? `Bets Involving ${relevantGame.away_team} vs ${relevantGame.home_team}` : 'Loading...'}</h2>
-            {relevantBets}
+            {relevantBets?.map((bet) =>(
+                <ul className='bets' key={bet.id}>
+                    <li>{bet.description}: {bet.odds}</li>
+                    <button onClick={() => navigateToCommentForm(bet.id)}>Leave A Comment</button>
+                    <button onClick={() => navigateToComments(bet.id)}>See Comments</button>
+            </ul>))}
         </div>
     )
 }

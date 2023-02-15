@@ -74,8 +74,6 @@ export function reducer(state, action) {
     case 'createBet': //payload is newBetObj and id passed into POST request
         const updatedBets = [...state.bets, action.payload]
         const updatedUserBets = [...state.user.bets, action.payload]
-        const relevantGame = state.games?.find((game) => game.id === action.payload.game_id)
-        //console.log('relevantGame', relevantGame)
         return {
             ...state,
             user: {

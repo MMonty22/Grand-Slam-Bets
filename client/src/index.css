@@ -155,16 +155,15 @@ table, td, th {
 }
 
 .comment {
-  justify-content: center;
   text-align: center;
+  justify-content: center;
   background-color: white;
   color: navy;
   font-size: 1rem;
   border: grey solid 1px;
   padding: 1rem;
   width: fit-content;
-  height: 1rem;
-  display: inline-grid; /*puts cards horizontal*/
+  height: fit-content;
   margin: 2rem 1rem;
   box-shadow: 3px 4px #504b55
 }
