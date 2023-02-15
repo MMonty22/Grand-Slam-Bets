@@ -11,9 +11,8 @@ function Bets() {
     //console.log('relevantGame', relevantGame)
 
     const relevantBets = relevantGame?.bets?.map((bet) =>(
-        <ul key={bet.id}>
-            <li>{bet.description}</li>
-            <li>{bet.odds}</li>
+        <ul className='bets' key={bet.id}>
+            <li>{bet.description}: {bet.odds}</li>
             <button onClick={() => navigateToCommentForm(bet.id)}>Leave A Comment</button>
             <button onClick={() => navigateToComments(bet.id)}>See Comments</button>
     </ul>))

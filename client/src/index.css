@@ -139,6 +139,36 @@ table, td, th {
   margin-right: 0.5rem;
 }
 
+.bets {
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  color: navy;
+  font-size: 1rem;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: fit-content;
+  height: 5rem;
+  display: inline-grid; /*puts cards horizontal*/
+  margin: 2rem 1rem;
+  box-shadow: 3px 4px #504b55
+}
+
+.comment {
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  color: navy;
+  font-size: 1rem;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: fit-content;
+  height: 1rem;
+  display: inline-grid; /*puts cards horizontal*/
+  margin: 2rem 1rem;
+  box-shadow: 3px 4px #504b55
+}
+
 .nav {
   margin-bottom: 1rem;
   display: flex;
