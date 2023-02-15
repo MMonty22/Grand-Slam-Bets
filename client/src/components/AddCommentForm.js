@@ -57,11 +57,11 @@ function AddCommentForm() {
     }
 
     return (
-        <div>
+        <div className='addComment'>
             <h2 className='headers'>Leave A Comment About the Following Bet</h2>
             <h3 className='comment'>{relevantBet ? `${relevantBet.description}: ${relevantBet.odds}` : 'Loading...'}</h3>
             <form className="commentForm" onSubmit={handleSubmit}>
-                    <label>Comment Text</label>
+                    <label className='headers'>Comment Text</label>
                     <br />
                     <input id="text" type="text" value={commentFormData.text} onChange={handleChange}></input>
                     <br />

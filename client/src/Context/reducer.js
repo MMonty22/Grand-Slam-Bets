@@ -91,8 +91,7 @@ export function reducer(state, action) {
                 ...state.user,
                 bets: editedUserBets
             },
-            bets: editedBets,
-            //games: editedGameBets
+            bets: editedBets
         }
     case 'deleteBet':
         const betsMinusDeletedOne = state.bets.filter((bet)=> bet.id !== action.payload)

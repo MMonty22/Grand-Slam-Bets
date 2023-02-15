@@ -10,7 +10,7 @@ function Bets() {
     const relevantGame = state.games?.find((game) => String(game.id) === String(id))
     //console.log('relevantGame', relevantGame)
 
-    const relevantBets = state.bets.filter((bet) => (bet.game_id !== id))
+    const relevantBets = state.bets.filter((bet) => String(bet.game_id) === String(id))
     //console.log('relevantBets', relevantBets)
     
     function navigateToCommentForm(betID) {

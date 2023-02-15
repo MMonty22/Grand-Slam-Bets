@@ -18,6 +18,11 @@ body {
   display: center;
 }
 
+.addComment {
+  text-align: center;
+  display: center;
+}
+
 .home {
   color: white;
   font-size: 1rem;
@@ -58,8 +63,8 @@ li {list-style: none}
   font-size: 1rem;
   border: grey solid 1px;
   padding: 1rem;
-  width: 17rem;
-  height: 8rem;
+  width: fit-content;
+  height: fit-content;
   display: inline-grid; /*puts cards horizontal*/
   margin: 2rem 1rem;
   box-shadow: 3px 4px #504b55
@@ -96,8 +101,23 @@ form {
   font-size: 1rem;
   border: grey solid 1px;
   padding: 1rem;
-  width: 17rem;
-  height: 5rem;
+  width: fit-content;
+  height: fit-content;
+  display: inline-grid; /*puts cards horizontal*/
+  margin: 2rem 1rem;
+  box-shadow: 3px 4px #504b55
+}
+
+.betComments {
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  color: navy;
+  font-size: 1rem;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: fit-content;
+  height: fit-content;
   display: inline-grid; /*puts cards horizontal*/
   margin: 2rem 1rem;
   box-shadow: 3px 4px #504b55

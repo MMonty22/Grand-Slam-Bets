@@ -9,16 +9,16 @@ function BetComments() {
     const relevantBet = state.bets?.find((bet) => String(bet.id) === String(id))
     //console.log('relevantBet', relevantBet)
 
-    const relevantComs = state.comments?.filter((com) => com.bet_id === relevantBet?.id)
+    const relevantComs = state.comments?.filter((com) => String(com.bet_id) === String(id))
     //console.log('releComs', relevantComs)
 
     return (
-        <div className='betComments'>
+        <div>
             <h3 className='headers'>{relevantBet ? `Comments for ${relevantBet.description}: ${relevantBet.odds}` : 'Loading...'}</h3>
             {relevantComs?.map((com) => {
                 const relevantUser = state.users.find(u => u.id === com.user_id)
                 //console.log('RU', relevantUser)
-                return <div key={com.id}>
+                return <div className='betComments' key={com.id}>
                     <p>{`${relevantUser.username} said: ${com.text}`}</p>
             </div>
             })}
