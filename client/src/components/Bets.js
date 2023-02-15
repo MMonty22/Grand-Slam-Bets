@@ -28,7 +28,7 @@ function Bets() {
 
     return (
         <div>
-            <h2>{relevantGame ? `Bets Involving ${relevantGame.away_team} vs ${relevantGame.home_team}` : 'Loading...'}</h2>
+            <h2 className='headers'>{relevantGame ? `Bets Involving ${relevantGame.away_team} vs ${relevantGame.home_team}` : 'Loading...'}</h2>
             {relevantBets}
         </div>
     )

@@ -35,7 +35,7 @@ function Login({username, setUsername, password, setPassword, errors, setErrors}
 
     return (
         <div className='login'>
-        <h2>Please Login</h2>
+        <h2 className='headers'>Please Login</h2>
         <form onSubmit={handleSubmit}>
           <label>Username:</label>
           <br/>

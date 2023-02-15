@@ -10,17 +10,17 @@ function Home() {
     const [showComments, setShowComments] = useState(false)
     //console.log('state', state)
 
-    const userBets = state.user?.bets?.map((bet) => <ul key={bet.id}>
+    const userBets = state.user?.bets?.map((bet) => <ul className='userBets' key={bet.id}>
             <li>Bet: {bet.description}</li>
             <li>Odds: {bet.odds}</li>
-            <button onClick={() => navigateToBetEditForm(bet.id)}>✏️</button>
-            <button onClick={() => handleBetDelete(bet.id)}>❌</button>
+            <button className='editButton' onClick={() => navigateToBetEditForm(bet.id)}>✏️</button>
+            <button className='deleteButton' onClick={() => handleBetDelete(bet.id)}>❌</button>
     </ul>)
 
-    const userComments = state.user?.comments?.map((com) => <ul key={com.id}>
+    const userComments = state.user?.comments?.map((com) => <ul className='userComments' key={com.id}>
         <li>{com.text}</li>
-        <button onClick={() => navigateToCommentEditForm(com.id)}>✏️</button>
-        <button onClick={() => handleCommentDelete(com.id)}>❌</button>
+        <button className='editButton' onClick={() => navigateToCommentEditForm(com.id)}>✏️</button>
+        <button className='deleteButton' onClick={() => handleCommentDelete(com.id)}>❌</button>
     </ul>)
 
     function navigateToBetEditForm(betID) {
@@ -86,31 +86,33 @@ function Home() {
     else if (state.loggedIn && showBets)
         return (
         <div className='home'>
-            <h2>Welcome, {state.user.username}</h2>
+            <h2>Hello {state.user.username}</h2>
             <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
             <br />
             <button onClick={handleShowBets}>{showBets ? "Hide My Bets" : "Show My Bets"}</button>
             <br />
-            <button onClick={handleShowComments}>{showComments ? "Hide My Comments" : "Show My Comments"}</button>
             {userBets}
+            <br />
+            <button onClick={handleShowComments}>{showComments ? "Hide My Comments" : "Show My Comments"}</button>
         </div>
     )
     else if (state.loggedIn && showComments)
         return (
         <div className='home'>
-            <h2>Welcome, {state.user.username}</h2>
+            <h2>Hello {state.user.username}</h2>
             <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
             <br />
             <button onClick={handleShowBets}>{showBets ? "Hide My Bets" : "Show My Bets"}</button>
             <br />
             <button onClick={handleShowComments}>{showComments ? "Hide My Comments" : "Show My Comments"}</button>
+            <br />
             {userComments}
         </div>
     )
     else if (state.loggedIn)
         return (
             <div className='home'>
-                <h2>Welcome, {state.user.username}</h2>
+                <h2>Hello {state.user.username}</h2>
                 <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
                 <br />
                 <button onClick={handleShowBets}>{showBets ? "Hide My Bets" : "Show My Bets"}</button>

@@ -74,6 +74,8 @@ export function reducer(state, action) {
     case 'createBet': //payload is newBetObj and id passed into POST request
         const updatedBets = [...state.bets, action.payload]
         const updatedUserBets = [...state.user.bets, action.payload]
+        const relevantGame = state.games?.find((game) => game.id === action.payload.game_id)
+        //console.log('relevantGame', relevantGame)
         return {
             ...state,
             user: {
@@ -85,9 +87,6 @@ export function reducer(state, action) {
     case 'updateBet': //payload is editedBetObj passed into function from PATCH request which has gameID, category, description and odds
         const editedUserBets = state.user.bets.map((bet) => bet.id === action.payload.id ? action.payload : bet)
         const editedBets = state.bets.map((bet) => bet.id === action.payload ? action.payload : bet)
-        const relevantGame = state.games?.find((game) => game.id === action.payload.gameID)
-        console.log('relevantGame', relevantGame)
-        //const editedGameBets = 
         return {
             ...state,
             user: {

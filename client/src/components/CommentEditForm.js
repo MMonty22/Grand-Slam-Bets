@@ -59,7 +59,7 @@ function CommentEditForm() {
     if (errorsState.length > 0)
     return (
         <div>
-        <h2>You Are Editing The Following Comment</h2>
+        <h2 className='headers'>You Are Editing The Following Comment</h2>
         <form className="commentForm" onSubmit={handleSubmit}>
                 <label>Comment Text</label>
                 <br />
@@ -72,7 +72,7 @@ function CommentEditForm() {
     )
     else return (
         <div>
-            <h2>You Are Editing The Following Comment</h2>
+            <h2 className='headers'>You Are Editing The Following Comment</h2>
             <form className="commentForm" onSubmit={handleSubmit}>
                     <label>Comment Text</label>
                     <br />

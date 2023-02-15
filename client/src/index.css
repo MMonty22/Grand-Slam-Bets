@@ -13,24 +13,91 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.gameStats {
-  background-color: whitesmoke;
+.signUpForm {
+  text-align: center;
+  display: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.home {
+  color: white;
+  font-size: 1rem;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  display: center;
 }
+
+.login {
+  text-align: center;
+  display: center;
+}
+
+ul {list-style: none}
+
+li {list-style: none}
 
 .gameCards {
   justify-content: center;
   text-align: center;
-  background-color: lightblue;
+  background-color: white;
   color: navy;
+  font-size: 1rem;
   border: grey solid 1px;
   padding: 1rem;
   width: 8rem;
   height: 2rem;
+  display: inline-grid; /*puts cards horizontal*/
+  margin: 2rem 1rem;
+  box-shadow: 3px 4px #504b55
+}
+
+.userBets {
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  color: navy;
+  font-size: 1rem;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 17rem;
+  height: 8rem;
+  display: inline-grid; /*puts cards horizontal*/
+  margin: 2rem 1rem;
+  box-shadow: 3px 4px #504b55
+}
+
+.deleteButton {
+  width: 3rem;
+  margin: auto;
+}
+
+.editButton {
+  width: 3rem;
+  margin: auto;
+}
+
+.headers {
+  color: white;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+.betForm {
+  color: white;
+}
+
+.userComments {
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  color: navy;
+  font-size: 1rem;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 17rem;
+  height: 5rem;
   display: inline-grid; /*puts cards horizontal*/
   margin: 2rem 1rem;
   box-shadow: 3px 4px #504b55
@@ -41,10 +108,63 @@ table, td, th {
   border-collapse: collapse;
   text-align: center;
   padding: 1.25rem;
+  background-color: white;
+  width: fit-content;
 }
 
 .pitcherTable {
   margin-bottom: 2rem;
+  box-shadow: 3px 4px #504b55;
+  overflow-x: auto;
+}
+
+.hitterTable {
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+  box-shadow: 3px 4px #504b55;
+}
+
+.gameStats {
+  text-align: center;
+}
+
+#gameStateH1 {
+  color: white;
+}
+
+.gameStats button {
+  display: inline-grid;
+  padding: 0.25rem;
+  margin-bottom: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+.nav {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem calc((90vw - 6.25rem) / 2);
+}
+
+#addGame {
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+}
+
+button:hover{
+  background-color: lightblue;
+}
+
+a:visited {
+  text-decoration: none; 
+  color: white;  
+}
+
+.logoutButton{
+  position: fixed;
+  right: 0.5rem;
+  top: 1rem;
 }
 
 .loginModal {

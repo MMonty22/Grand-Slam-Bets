@@ -59,13 +59,13 @@ function AddBetForm() {
     if (relevantGame === undefined)
     return(
         <div>
-            <h1>Loading....</h1>
+            <h1 className='headers'>Loading....</h1>
         </div>
     )
     if (errorsState.length > 0)
     return(
         <div>
-            <h2>{`Adding A Bet For ${relevantGame?.away_team} vs ${relevantGame?.home_team}`}</h2>
+            <h2 className='headers'>{`Adding A Bet For ${relevantGame?.away_team} vs ${relevantGame?.home_team}`}</h2>
             <form className="betForm" onSubmit={handleSubmit}>
                 <label>Type</label>
                 <br />
@@ -86,7 +86,7 @@ function AddBetForm() {
     )
     else return(
         <div>
-            <h2>{`Adding A Bet For ${relevantGame?.away_team} vs ${relevantGame?.home_team}`}</h2>
+            <h2 className='headers'>{`Adding A Bet For ${relevantGame?.away_team} vs ${relevantGame?.home_team}`}</h2>
             <form className="betForm" onSubmit={handleSubmit}>
                 <label>Type</label>
                 <br />

@@ -37,7 +37,7 @@ function SignUp({username, setUsername, password, setPassword, passwordConfirmat
   
     return (
       <div className='signUpForm'>
-        <h2>Create An Account</h2>
+        <h2 className='headers'>Create An Account</h2>
         <form onSubmit={handleSubmit}>
           <label>Username:</label>
           <br/>
