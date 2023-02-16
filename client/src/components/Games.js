@@ -8,9 +8,9 @@ function Games() {
     const navigate = useNavigate()
 
     //console.log('state', state)
-    const gamesInfo = state.games.map((game) =>
-        <ul key={game.id}>
-        <li className='gameCards' onClick={() => navigateToPlayerStats(game.id)}>{`${game.away_team} vs ${game.home_team}`}</li>
+    const gamesInfo = state.games?.map((game) =>
+        <ul className='gameCards' key={game.id}>
+        <li onClick={() => navigateToPlayerStats(game.id)}>{`${game.away_team} vs ${game.home_team}`}</li>
     </ul>)
 
     function navigateToPlayerStats(gameID) {

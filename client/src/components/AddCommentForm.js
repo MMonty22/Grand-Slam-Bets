@@ -56,8 +56,9 @@ function AddCommentForm() {
         dispatch({type: "createComment", payload: newCommentObj})
     }
 
+    if (errorsState.length > 0)
     return (
-        <div className='addComment'>
+        <div>
             <h2 className='headers'>Leave A Comment About the Following Bet</h2>
             <h3 className='comment'>{relevantBet ? `${relevantBet.description}: ${relevantBet.odds}` : 'Loading...'}</h3>
             <form className="commentForm" onSubmit={handleSubmit}>
@@ -67,6 +68,20 @@ function AddCommentForm() {
                     <br />
                     <button id="submitCommentButton" type="submit">Submit</button>
                     {errorsState}
+            </form>
+        </div>
+    )
+    else 
+    return (
+        <div>
+            <h2 className='headers'>Leave A Comment About the Following Bet</h2>
+            <h3 className='betToCommentOn'>{relevantBet ? `${relevantBet.description}: ${relevantBet.odds}` : 'Loading...'}</h3>
+            <form className="commentForm" onSubmit={handleSubmit}>
+                    <label className='headers'>Comment Text</label>
+                    <br />
+                    <input id="text" type="text" value={commentFormData.text} onChange={handleChange}></input>
+                    <br />
+                    <button id="submitCommentButton" type="submit">Submit</button>
             </form>
         </div>
     )

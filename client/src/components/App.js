@@ -25,6 +25,7 @@ function App() {
     <div className="App">
       <UserProvider>
         <NavBar />
+        <h1 className='headers'>Welcome to Grand Slam Bets</h1>
         <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/signup" element={<SignUp username={username} setUsername={setUsername} password={password} setPassword={setPassword} passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} errors={errors} setErrors={setErrors}/>}/>

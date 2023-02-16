@@ -18,9 +18,11 @@ function BetComments() {
             {relevantComs?.map((com) => {
                 const relevantUser = state.users.find(u => u.id === com.user_id)
                 //console.log('RU', relevantUser)
-                return <div className='betComments' key={com.id}>
-                    <p>{`${relevantUser.username} said: ${com.text}`}</p>
-            </div>
+                return <div key={com.id}>
+                    <ul className='betComments'>
+                        <li>{`${relevantUser.username} said: ${com.text}`}</li>
+                    </ul>
+                </div>
             })}
         </div>
     )

@@ -89,11 +89,11 @@ function Home() {
             <h2>Hello {state.user.username}</h2>
             <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
             <br />
-            <button onClick={handleShowBets}>{showBets ? "Hide My Bets" : "Show My Bets"}</button>
+            <button onClick={handleShowBets}>{showBets ? "Hide My Bets" : "See My Bets"}</button>
             <br />
             {userBets}
             <br />
-            <button onClick={handleShowComments}>{showComments ? "Hide My Comments" : "Show My Comments"}</button>
+            <button onClick={handleShowComments}>{showComments ? "Hide My Comments" : "See My Comments"}</button>
         </div>
     )
     else if (state.loggedIn && showComments)
@@ -102,9 +102,9 @@ function Home() {
             <h2>Hello {state.user.username}</h2>
             <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
             <br />
-            <button onClick={handleShowBets}>{showBets ? "Hide My Bets" : "Show My Bets"}</button>
+            <button onClick={handleShowBets}>{showBets ? "Hide My Bets" : "See My Bets"}</button>
             <br />
-            <button onClick={handleShowComments}>{showComments ? "Hide My Comments" : "Show My Comments"}</button>
+            <button onClick={handleShowComments}>{showComments ? "Hide My Comments" : "See My Comments"}</button>
             <br />
             {userComments}
         </div>
@@ -115,9 +115,9 @@ function Home() {
                 <h2>Hello {state.user.username}</h2>
                 <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
                 <br />
-                <button onClick={handleShowBets}>{showBets ? "Hide My Bets" : "Show My Bets"}</button>
+                <button onClick={handleShowBets}>{showBets ? "Hide My Bets" : "See My Bets"}</button>
                 <br />
-                <button onClick={handleShowComments}>{showComments ? "Hide My Comments" : "Show My Comments"}</button>
+                <button onClick={handleShowComments}>{showComments ? "Hide My Comments" : "See My Comments"}</button>
             </div>
         )
     else
