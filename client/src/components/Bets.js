@@ -22,7 +22,7 @@ function Bets() {
     }
 
     return (
-        <div>
+        <div className='centerDiv'>
             <h2 className='headers'>{relevantGame ? `Bets Involving ${relevantGame.away_team} vs ${relevantGame.home_team}` : 'Loading...'}</h2>
             {relevantBets?.map((bet) =>(
                 <ul className='bets' key={bet.id}>

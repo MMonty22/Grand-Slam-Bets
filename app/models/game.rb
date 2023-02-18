@@ -3,6 +3,30 @@ class Game < ApplicationRecord
     has_many :comments, through: :bets
     has_many :hitters
     has_many :pitchers
+    validates :away_team, uniqueness: true
+    validates :away_team, presence: true
+    validates :home_team, uniqueness: true
+    validates :home_team, presence: true
+    validates :away_team_SP, presence: true
+    validates :home_team_SP, presence: true
+    validates :away_team_SP, uniqueness: true
+    validates :home_team_SP, uniqueness: true
+    validate :home_team_SP_exists
+    validate :away_team_SP_exists
+
+    def home_team_SP_exists
+        unless Pitcher.all.include?(self.home_team_SP)
+            #byebug
+            errors.add(:home_team_SP, "pitcher does not exist in our database, please check your spelling or try again")
+        end
+    end
+    #for some reason these return false when they should return true but do return false when they should return false
+
+    def away_team_SP_exists
+        unless Pitcher.all.include?(self.away_team_SP)
+            errors.add(:away_team_SP, "pitcher does not exist in our database, please check your spelling or try again")
+        end
+    end
 
     def assign_players
         Hitter.all.each do |hit|

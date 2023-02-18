@@ -46,7 +46,7 @@ function AddCommentForm() {
             }
             else {
                 setcommentFormData({text: ""})
-                const errors = data.errors.map(e => <li>{e}</li>)
+                const errors = data.errors.map(e => <li className='errors'>{e}</li>)
                 setErrorsState(errors)
             }
         })
@@ -58,7 +58,7 @@ function AddCommentForm() {
 
     if (errorsState.length > 0)
     return (
-        <div>
+        <div className='centerDiv'>
             <h2 className='headers'>Leave A Comment About the Following Bet</h2>
             <h3 className='comment'>{relevantBet ? `${relevantBet.description}: ${relevantBet.odds}` : 'Loading...'}</h3>
             <form className="commentForm" onSubmit={handleSubmit}>
@@ -73,7 +73,7 @@ function AddCommentForm() {
     )
     else 
     return (
-        <div>
+        <div className='centerDiv'>
             <h2 className='headers'>Leave A Comment About the Following Bet</h2>
             <h3 className='betToCommentOn'>{relevantBet ? `${relevantBet.description}: ${relevantBet.odds}` : 'Loading...'}</h3>
             <form className="commentForm" onSubmit={handleSubmit}>

@@ -7,12 +7,6 @@ function Games() {
     const {state} = useContext(UserContext);
     const navigate = useNavigate()
 
-    //console.log('state', state)
-    const gamesInfo = state.games?.map((game) =>
-        <ul className='gameCards' key={game.id}>
-        <li onClick={() => navigateToPlayerStats(game.id)}>{`${game.away_team} vs ${game.home_team}`}</li>
-    </ul>)
-
     function navigateToPlayerStats(gameID) {
         navigate(`/games/${gameID}`)
     }
@@ -34,9 +28,13 @@ function Games() {
     }
     else if (state.loggedIn)
     return (
-        <div>
+        <div className='centerDiv'>
             <h3 id="addGame" onClick={() => navigateToAddGameForm()}>Add A Game</h3>
-            {gamesInfo}
+            {state.games?.map((game) => 
+                <ul className='gameCards' key={game.id}>
+                    <li onClick={() => navigateToPlayerStats(game.id)}>{`${game.away_team} vs ${game.home_team}`}</li>
+                    {/* <li>{`${game.pitchers[0].name} vs ${game.pitchers[1].name}`}</li> */}
+                </ul>)}
         </div>
     )
     else

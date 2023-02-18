@@ -35,34 +35,27 @@ ul {list-style: none}
 li {list-style: none}
 
 .gameCards {
-  justify-content: center;
-  text-align: center;
   background-color: white;
   color: navy;
-  font-size: 1rem;
-  border: grey solid 1px;
+  border: navy solid 0.15rem;
   padding: 1rem;
-  width: fit-content;
-  height: fit-content;
-  display: inline-grid; 
-  margin: 2rem 1rem;
+  display: inline-grid;
+  margin: 2rem;
   box-shadow: 3px 4px #504b55;
-  text-decoration: underline;
+}
+
+.centerDiv {
+  text-align: center;
 }
 
 .userBets {
-  justify-content: center;
-  text-align: center;
   background-color: white;
   color: navy;
-  font-size: 1rem;
-  border: grey solid 1px;
+  border: navy solid 0.15rem;
   padding: 1rem;
-  width: fit-content;
-  height: fit-content;
-  display: inline-grid; 
-  margin: 2rem 1rem;
-  box-shadow: 3px 4px #504b55
+  display: inline-grid;
+  margin: 2rem;
+  box-shadow: 3px 4px #504b55;
 }
 
 .deleteButton {
@@ -89,33 +82,23 @@ form {
 }
 
 .userComments {
-  justify-content: center;
-  text-align: center;
   background-color: white;
   color: navy;
-  font-size: 1rem;
-  border: grey solid 1px;
+  border: navy solid 0.15rem;
   padding: 1rem;
-  width: fit-content;
-  height: fit-content;
-  display: inline-grid; 
-  margin: 2rem 1rem;
-  box-shadow: 3px 4px #504b55
+  display: inline-grid;
+  margin: 2rem;
+  box-shadow: 3px 4px #504b55;
 }
 
 .betComments {
-  justify-content: center;
-  text-align: center;
   background-color: white;
   color: navy;
-  font-size: 1rem;
-  border: grey solid 1px;
+  border: navy solid 0.15rem;
   padding: 1rem;
-  width: fit-content;
-  height: fit-content;
   display: inline-grid;
-  margin: 2rem 1rem;
-  box-shadow: 3px 4px #504b55
+  margin: 2rem;
+  box-shadow: 3px 4px #504b55;
 }
 
 table, td, th {
@@ -155,32 +138,23 @@ table, td, th {
 }
 
 .bets {
-  justify-content: center;
-  text-align: center;
   background-color: white;
   color: navy;
-  font-size: 1rem;
-  border: grey solid 1px;
+  border: navy solid 0.15rem;
   padding: 1rem;
-  width: fit-content;
-  height: 5rem;
   display: inline-grid;
-  margin: 2rem 1rem;
-  box-shadow: 3px 4px #504b55
+  margin: 2rem;
+  box-shadow: 3px 4px #504b55;
 }
 
 .betToCommentOn {
-  justify-content: center;
-  text-align: center;
   background-color: white;
   color: navy;
-  font-size: 1rem;
-  border: grey solid 1px;
+  border: navy solid 0.15rem;
   padding: 1rem;
-  width: fit-content;
-  height: fit-content;
-  margin: 2rem 1rem;
-  box-shadow: 3px 4px #504b55
+  display: inline-grid;
+  margin: 2rem;
+  box-shadow: 3px 4px #504b55;
 }
 
 .nav {
@@ -188,6 +162,47 @@ table, td, th {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc((90vw - 6.25rem) / 2);
+}
+
+.gameForm {
+  color: white;
+  text-align: center;
+}
+
+.gameForm input {
+  margin: 0.5rem
+}
+
+.gameForm label {
+  margin: 0.5rem
+}
+
+.gameForm select {
+  margin: 0.5rem
+}
+
+.commentForm input {
+  margin: 0.5rem
+}
+
+.commentForm label {
+  margin: 0.5rem
+}
+
+.commentForm select {
+  margin: 0.5rem
+}
+
+.betForm input {
+  margin: 0.5rem
+}
+
+.betForm label {
+  margin: 0.5rem
+}
+
+.betForm select {
+  margin: 0.5rem
 }
 
 #addGame {
@@ -231,4 +246,11 @@ a:visited {
   border: 1px white;
   margin-right: 9rem;
   margin-left: 9rem;
+}
+
+.errors {
+  color: black;
+  font-size: larger;
+  -webkit-text-stroke: 1px darkred;
+  text-align: center;
 }

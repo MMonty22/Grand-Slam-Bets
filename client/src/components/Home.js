@@ -23,6 +23,7 @@ function Home() {
             <ul className='userBets' key={bet.id}>
                 <li onClick={() => navigateToGame(bet.game_id)}>Bet: {bet.description}</li>
                 <li>Odds: {bet.odds}</li>
+                <br></br>
                 <button className='editButton' onClick={() => navigateToBetEditForm(bet.id)}>✏️</button>
                 <button className='deleteButton' onClick={() => handleBetDelete(bet.id)}>❌</button>
             </ul>   
@@ -36,6 +37,7 @@ function Home() {
         return (
             <ul className='userComments' key={com.id}>
                 <li onClick={() => navigateToBetComments(com.bet_id)}>{com.text}</li>
+                <br></br>
                 <button className='editButton' onClick={() => navigateToCommentEditForm(com.id)}>✏️</button>
                 <button className='deleteButton' onClick={() => handleCommentDelete(com.id)}>❌</button>
             </ul>
@@ -123,6 +125,7 @@ function Home() {
                 <ul className='userBets' key={bet.id}>
                 <li>Bet: {bet.description}</li>
                 <li>Odds: {bet.odds}</li>
+                <br></br>
                 <button className='deleteButton' onClick={() => handleBetDelete(bet.id)}>❌</button>
               </ul>
             )
@@ -135,6 +138,7 @@ function Home() {
             return (
                 <ul className='userComments' key={com.id}>
                 <li>{com.text}</li>
+                <br></br>
                 <button className='deleteButton' onClick={() => handleCommentDelete(com.id)}>❌</button>
               </ul>
             )

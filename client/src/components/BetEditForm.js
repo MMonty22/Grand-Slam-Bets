@@ -45,7 +45,7 @@ function BetEditForm() {
             }
             else {
                 setEditFormData({category: "", description: "", odds: ""})
-                const errors = data.errors.map(e => <li>{e}</li>)
+                const errors = data.errors.map(e => <li className='errors'>{e}</li>)
                 setErrorsState(errors)
             }
         })

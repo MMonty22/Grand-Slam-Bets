@@ -46,7 +46,7 @@ function AddGameForm() {
             }
             else {
                 setFormData({away_team: "", home_team: ""})
-                const errors = data.errors.map(e => <li>{e}</li>)
+                const errors = data.errors.map(e => <li className='errors'>{e}</li>)
                 setErrorsState(errors)
             }
         })

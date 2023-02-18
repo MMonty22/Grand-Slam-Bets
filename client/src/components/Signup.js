@@ -29,7 +29,7 @@ function SignUp({username, setUsername, password, setPassword, passwordConfirmat
             setUsername("")
             setPassword("")
             setPasswordConfirmation("")
-            const errors = user.errors.map(e => <li>{e}</li>)
+            const errors = user.errors.map(e => <li className='errors'>{e}</li>)
             setErrors(errors)
           }
         });

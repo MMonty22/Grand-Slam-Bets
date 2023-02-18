@@ -46,7 +46,7 @@ function CommentEditForm() {
             }
             else {
                 setCommentEditFormData({text: ""})
-                const errors = data.errors.map(e => <li>{e}</li>)
+                const errors = data.errors.map(e => <li className='errors'>{e}</li>)
                 setErrorsState(errors)
             }
         })
