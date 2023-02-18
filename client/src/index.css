@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-image: url('https://media.istockphoto.com/id/482805043/photo/baseball-in-the-infield.jpg?s=612x612&w=0&k=20&c=I9ubYdLnf7heRWh7V8I0Zxo5s1OEBGMBgsj6Sg4b9Cs=');
+  background-image: url("https://media.istockphoto.com/id/482805043/photo/baseball-in-the-infield.jpg?s=612x612&w=0&k=20&c=I9ubYdLnf7heRWh7V8I0Zxo5s1OEBGMBgsj6Sg4b9Cs=");
   min-height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -249,8 +249,8 @@ a:visited {
 }
 
 .errors {
-  color: black;
+  color: white;
   font-size: larger;
-  -webkit-text-stroke: 1px darkred;
+  -webkit-text-stroke: 0.05rem red;
   text-align: center;
 }

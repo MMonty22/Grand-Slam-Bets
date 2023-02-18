@@ -60,6 +60,7 @@ function AddGameForm() {
     return(
         <div>
             <form className="gameForm" onSubmit={handleSubmit}>
+                {errorsState}
                 <label>Away Team</label>
                 <br></br>
                 <select onChange={handleChange} id="away_team" value={formData.away_team}>
@@ -82,7 +83,6 @@ function AddGameForm() {
                 <br></br>
                 <button id="submitGameButton" type="submit">Submit</button>
             </form>
-            {errorsState}
         </div>
     )
     else return(

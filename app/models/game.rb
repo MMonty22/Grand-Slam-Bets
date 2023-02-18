@@ -15,16 +15,14 @@ class Game < ApplicationRecord
     validate :away_team_SP_exists
 
     def home_team_SP_exists
-        unless Pitcher.all.include?(self.home_team_SP)
-            #byebug
-            errors.add(:home_team_SP, "pitcher does not exist in our database, please check your spelling or try again")
+        unless Pitcher.all.find_by(name: self.home_team_SP)
+            errors.add(:home_team_SP, "does not exist in our database, please check your spelling or try again")
         end
     end
-    #for some reason these return false when they should return true but do return false when they should return false
-
+    
     def away_team_SP_exists
-        unless Pitcher.all.include?(self.away_team_SP)
-            errors.add(:away_team_SP, "pitcher does not exist in our database, please check your spelling or try again")
+        unless Pitcher.all.find_by(name: self.away_team_SP)
+            errors.add(:away_team_SP, "does not exist in our database, please check your spelling or try again")
         end
     end
 
