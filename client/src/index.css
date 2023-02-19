@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-image: url('/home/mmonty22/Development/code/phase-5/phase-5-proj/client/src/image/mike_webisite_design_darktheme2-04.png');
+  background-image: url('./image/darktheme2-04.png');
   min-height: 100%;
   background-repeat: no-repeat, repeat;
   background-attachment: fixed;
