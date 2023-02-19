@@ -150,85 +150,95 @@ function Home() {
     }
     else if (state.loggedIn && showTodaysBets)
         return (
-        <div className='home'>
-            <h2>Hello {state.user.username}</h2>
-            <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
-            <br />
-            <button onClick={handleShowTodaysBets}>{showTodaysBets ? "Hide Bets You Made Today" : "See Bets You Made Today"}</button>
-            <br />
-            {todaysUserBets}
-            <br />
-            <button onClick={handleShowTodayComments}>{showTodayComments ? "Hide Comments You Made Today" : "See Comments You Made Today"}</button>
-            <br />
-            <button onClick={handleShowOldBets}>{showOldBets ? "Hide Old Bets You Made" : "See Old Bets You Made"}</button>
-            <br />
-            <button onClick={handleShowOldComments}>{showOldComments ? "Hide Old Comments You Made" : "See Old Comments You Made"}</button>
+        <div>
+            <h2 className='headers'>Hi {state.user.username}</h2>
+            <div className='home'>
+                <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
+                <br />
+                <button id='todayBets' onClick={handleShowTodaysBets}>{showTodaysBets ? "Hide Bets You Made Today" : "See Bets You Made Today"}</button>
+                <br />
+                {todaysUserBets}
+                <br />
+                <button id='todayComments' onClick={handleShowTodayComments}>{showTodayComments ? "Hide Comments You Made Today" : "See Comments You Made Today"}</button>
+                <br />
+                <button id='oldBets' onClick={handleShowOldBets}>{showOldBets ? "Hide Old Bets You Made" : "See Old Bets You Made"}</button>
+                <br />
+                <button id='oldComments' onClick={handleShowOldComments}>{showOldComments ? "Hide Old Comments You Made" : "See Old Comments You Made"}</button>
+            </div>
         </div>
     )
     else if (state.loggedIn && showTodayComments)
         return (
-        <div className='home'>
-            <h2>Hello {state.user.username}</h2>
-            <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
-            <br />
-            <button onClick={handleShowTodaysBets}>{showTodaysBets ? "Hide Bets You Made Today" : "See Bets You Made Today"}</button>
-            <br />
-            <button onClick={handleShowTodayComments}>{showTodayComments ? "Hide Comments You Made Today" : "See Comments You Made Today"}</button>
-            <br />
-            {todaysUserComments}
-            <br />
-            <button onClick={handleShowOldBets}>{showOldBets ? "Hide Old Bets You Made" : "See Old Bets You Made"}</button>
-            <br />
-            <button onClick={handleShowOldComments}>{showOldComments ? "Hide Old Comments You Made" : "See Old Comments You Made"}</button>
+        <div>
+            <h2 className='headers'>Hi {state.user.username}</h2>
+            <div className='home'>
+                <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
+                <br />
+                <button id='todayBets' onClick={handleShowTodaysBets}>{showTodaysBets ? "Hide Bets You Made Today" : "See Bets You Made Today"}</button>
+                <br />
+                <button id='todayComments' onClick={handleShowTodayComments}>{showTodayComments ? "Hide Comments You Made Today" : "See Comments You Made Today"}</button>
+                <br />
+                {todaysUserComments}
+                <br />
+                <button id='oldBets' onClick={handleShowOldBets}>{showOldBets ? "Hide Old Bets You Made" : "See Old Bets You Made"}</button>
+                <br />
+                <button id='oldComments' onClick={handleShowOldComments}>{showOldComments ? "Hide Old Comments You Made" : "See Old Comments You Made"}</button>
+            </div>
         </div>
     )
     else if (state.loggedIn && showOldBets)
         return (
-        <div className='home'>
-            <h2>Hello {state.user.username}</h2>
-            <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
-            <br />
-            <button onClick={handleShowTodaysBets}>{showTodaysBets ? "Hide Bets You Made Today" : "See Bets You Made Today"}</button>
-            <br />
-            <button onClick={handleShowTodayComments}>{showTodayComments ? "Hide Comments You Made Today" : "See Comments You Made Today"}</button>
-            <br />
-            <button onClick={handleShowOldBets}>{showOldBets ? "Hide Old Bets You Made" : "See Old Bets You Made"}</button>
-            <br />
-            {olderBets}
-            <br />
-            <button onClick={handleShowOldComments}>{showOldComments ? "Hide Old Comments You Made" : "See Old Comments You Made"}</button>
+        <div>
+            <h2 className='headers'>Hi {state.user.username}</h2>
+            <div className='home'>
+                <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
+                <br />
+                <button id='todayBets' onClick={handleShowTodaysBets}>{showTodaysBets ? "Hide Bets You Made Today" : "See Bets You Made Today"}</button>
+                <br />
+                <button id='todayComments' onClick={handleShowTodayComments}>{showTodayComments ? "Hide Comments You Made Today" : "See Comments You Made Today"}</button>
+                <br />
+                <button  id='oldBets' onClick={handleShowOldBets}>{showOldBets ? "Hide Old Bets You Made" : "See Old Bets You Made"}</button>
+                <br />
+                {olderBets}
+                <br />
+                <button  id='oldComments' onClick={handleShowOldComments}>{showOldComments ? "Hide Old Comments You Made" : "See Old Comments You Made"}</button>
+            </div>
         </div>
     )
     else if (state.loggedIn && showOldComments)
         return (
-        <div className='home'>
-            <h2>Hello {state.user.username}</h2>
-            <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
-            <br />
-            <button onClick={handleShowTodaysBets}>{showTodaysBets ? "Hide Bets You Made Today" : "See Bets You Made Today"}</button>
-            <br />
-            <button onClick={handleShowTodayComments}>{showTodayComments ? "Hide Comments You Made Today" : "See Comments You Made Today"}</button>
-            <br />
-            <button onClick={handleShowOldBets}>{showOldBets ? "Hide Old Bets You Made" : "See Old Bets You Made"}</button>
-            <br />
-            <button onClick={handleShowOldComments}>{showOldComments ? "Hide Old Comments You Made" : "See Old Comments You Made"}</button>
-            <br />
-            {olderComments}
+        <div>
+            <h2 className='headers'>Hi {state.user.username}</h2>
+            <div className='home'>
+                <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
+                <br />
+                <button id='todayBets' onClick={handleShowTodaysBets}>{showTodaysBets ? "Hide Bets You Made Today" : "See Bets You Made Today"}</button>
+                <br />
+                <button  id='todayComments' onClick={handleShowTodayComments}>{showTodayComments ? "Hide Comments You Made Today" : "See Comments You Made Today"}</button>
+                <br />
+                <button  id='oldBets' onClick={handleShowOldBets}>{showOldBets ? "Hide Old Bets You Made" : "See Old Bets You Made"}</button>
+                <br />
+                <button  id='oldComments' onClick={handleShowOldComments}>{showOldComments ? "Hide Old Comments You Made" : "See Old Comments You Made"}</button>
+                <br />
+                {olderComments}
+            </div>
         </div>
     )
     else if (state.loggedIn)
         return (
-            <div className='home'>
-                <h2>Hello {state.user.username}</h2>
-                <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
-                <br />
-                <button onClick={handleShowTodaysBets}>{showTodaysBets ? "Hide Bets You Made Today" : "See Bets You Made Today"}</button>
-                <br />
-                <button onClick={handleShowTodayComments}>{showTodayComments ? "Hide Comments You Made Today" : "See Comments You Made Today"}</button>
-                <br />
-                <button onClick={handleShowOldBets}>{showOldBets ? "Hide Old Bets You Made" : "See Old Bets You Made"}</button>
-                <br />
-                <button onClick={handleShowOldComments}>{showOldComments ? "Hide Old Comments You Made" : "See Old Comments You Made"}</button>
+            <div>
+                <h2 className='headers'>Hi {state.user.username}</h2>
+                <div className='home'>
+                    <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
+                    <br />
+                    <button id='todayBets' onClick={handleShowTodaysBets}>{showTodaysBets ? "Hide Bets You Made Today" : "See Bets You Made Today"}</button>
+                    <br />
+                    <button id='todayComments' onClick={handleShowTodayComments}>{showTodayComments ? "Hide Comments You Made Today" : "See Comments You Made Today"}</button>
+                    <br />
+                    <button id='oldBets' onClick={handleShowOldBets}>{showOldBets ? "Hide Old Bets You Made" : "See Old Bets You Made"}</button>
+                    <br />
+                    <button id='oldComments' onClick={handleShowOldComments}>{showOldComments ? "Hide Old Comments You Made" : "See Old Comments You Made"}</button>
+                </div>
             </div>
         )
     else
