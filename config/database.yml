@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: final-project
+  database: final-project-test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: final-project
-  #url: <%= ENV['postgres://final_project_lee1_user:6sqVuOfU7tSvkx0C9HAjkq8Z0MxBk20k@dpg-cflcf7pgp3ju5h3d6ggg-a/final_project_lee1'] %>
-  #url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
