@@ -24,6 +24,7 @@ default: &default
 development:
   <<: *default
   database: final-project
+  #url: postgres://final_project_lee1_user:6sqVuOfU7tSvkx0C9HAjkq8Z0MxBk20k@dpg-cflcf7pgp3ju5h3d6ggg-a.oregon-postgres.render.com/final_project_lee1
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

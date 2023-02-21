@@ -15,6 +15,7 @@ class BetsController < ApplicationController
 
     def update
         bet = @current_user.bets.find_by(id: params[:id])
+        bet.calc_user_record(@current_user)
         bet.update!(bet_params)
         render json: bet
     end
@@ -32,6 +33,6 @@ class BetsController < ApplicationController
     private
 
     def bet_params
-        params.permit(:game_id, :category, :description, :odds)
+        params.permit(:game_id, :category, :description, :odds, :result)
     end
 end

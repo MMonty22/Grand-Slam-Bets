@@ -2,6 +2,7 @@ import React, { useState, useContext} from 'react'
 import ReactDOM from 'react-dom';
 import { useNavigate } from "react-router-dom"
 import { UserContext } from '../Context/UserContext';
+import EnterResult from './EnterResult';
 
 function Home() {
     const navigate = useNavigate()
@@ -29,6 +30,7 @@ function Home() {
             </ul>   
             )
         }
+        else return ""
     })
 
     const todaysUserComments = state.user?.comments?.map((com) => {
@@ -43,6 +45,7 @@ function Home() {
             </ul>
             )
         }
+        else return ""
     })
 
     function navigateToGame(gameID) {
@@ -99,6 +102,7 @@ function Home() {
         setShowOldComments(!showOldComments)
     }
 
+
     function handleUserLogout() {
         fetch('/logout', {
             method: 'DELETE',
@@ -125,11 +129,13 @@ function Home() {
                 <ul className='userBets' key={bet.id}>
                 <li>Bet: {bet.description}</li>
                 <li>Odds: {bet.odds}</li>
-                <br></br>
+                <br/>
                 <button className='deleteButton' onClick={() => handleBetDelete(bet.id)}>❌</button>
+                <EnterResult bet={bet} />
               </ul>
             )
         }
+        else return ""
     })
 
     const olderComments = state.user?.comments?.map((com) => {
@@ -143,6 +149,7 @@ function Home() {
               </ul>
             )
         }
+        else return ""
     })
 
     if (state.initialLoad) {
@@ -152,6 +159,7 @@ function Home() {
         return (
         <div>
             <h2 className='headers'>Hi {state.user.username}</h2>
+            <p className='headers'>Your Record: {`${state.user.wins} wins - ${state.user.losses} losses`}</p>
             <div className='home'>
                 <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
                 <br />
@@ -171,6 +179,7 @@ function Home() {
         return (
         <div>
             <h2 className='headers'>Hi {state.user.username}</h2>
+            <p className='headers'>Your Record: {`${state.user.wins} wins - ${state.user.losses} losses`}</p>
             <div className='home'>
                 <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
                 <br />
@@ -190,6 +199,7 @@ function Home() {
         return (
         <div>
             <h2 className='headers'>Hi {state.user.username}</h2>
+            <p className='headers'>Your Record: {`${state.user.wins} wins - ${state.user.losses} losses`}</p>
             <div className='home'>
                 <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
                 <br />
@@ -209,6 +219,7 @@ function Home() {
         return (
         <div>
             <h2 className='headers'>Hi {state.user.username}</h2>
+            <p className='headers'>Your Record: {`${state.user.wins} wins - ${state.user.losses} losses`}</p>
             <div className='home'>
                 <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
                 <br />
@@ -228,6 +239,7 @@ function Home() {
         return (
             <div>
                 <h2 className='headers'>Hi {state.user.username}</h2>
+                <p className='headers'>Your Record: {`${state.user.wins} wins - ${state.user.losses} losses`}</p>
                 <div className='home'>
                     <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
                     <br />
