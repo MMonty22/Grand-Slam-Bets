@@ -159,7 +159,7 @@ function Home() {
         return (
         <div>
             <h2 className='headers'>Hi {state.user.username}</h2>
-            <p className='headers'>Your Record: {`${state.user.wins} wins - ${state.user.losses} losses`}</p>
+            <p className='headers'>Your Record: {`${state.user?.wins} wins - ${state.user?.losses} losses`}</p>
             <div className='home'>
                 <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
                 <br />
@@ -179,7 +179,7 @@ function Home() {
         return (
         <div>
             <h2 className='headers'>Hi {state.user.username}</h2>
-            <p className='headers'>Your Record: {`${state.user.wins} wins - ${state.user.losses} losses`}</p>
+            <p className='headers'>Your Record: {`${state.user?.wins} wins - ${state.user?.losses} losses`}</p>
             <div className='home'>
                 <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
                 <br />
@@ -199,7 +199,7 @@ function Home() {
         return (
         <div>
             <h2 className='headers'>Hi {state.user.username}</h2>
-            <p className='headers'>Your Record: {`${state.user.wins} wins - ${state.user.losses} losses`}</p>
+            <p className='headers'>Your Record: {`${state.user?.wins} wins - ${state.user?.losses} losses`}</p>
             <div className='home'>
                 <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
                 <br />
@@ -219,7 +219,7 @@ function Home() {
         return (
         <div>
             <h2 className='headers'>Hi {state.user.username}</h2>
-            <p className='headers'>Your Record: {`${state.user.wins} wins - ${state.user.losses} losses`}</p>
+            <p className='headers'>Your Record: {`${state.user?.wins} wins - ${state.user?.losses} losses`}</p>
             <div className='home'>
                 <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
                 <br />
@@ -239,7 +239,7 @@ function Home() {
         return (
             <div>
                 <h2 className='headers'>Hi {state.user.username}</h2>
-                <p className='headers'>Your Record: {`${state.user.wins} wins - ${state.user.losses} losses`}</p>
+                <p className='headers'>Your Record: {`${state.user?.wins} wins - ${state.user?.losses} losses`}</p>
                 <div className='home'>
                     <button className='logoutButton' onClick={handleUserLogout}>Logout</button>
                     <br />

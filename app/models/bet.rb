@@ -7,7 +7,6 @@ class Bet < ApplicationRecord
     validates :odds, presence: true
 
     def calc_user_record(current_user)
-        #byebug
         if self.result == "win"
             current_user.update(wins: current_user.wins +=1)
         elsif self.result == "loss"

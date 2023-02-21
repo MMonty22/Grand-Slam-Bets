@@ -94,19 +94,17 @@ export function reducer(state, action) {
             bets: editedBets
         }
     case 'updateBetResult': //payload is regular betObj plus result
-    //need to update state.user.wins but how??
-    //payload is just bet.result = to win or loss but that contorller action should increase win or loss
         const editedUserBetsWithResult = state.user.bets.map((bet) => bet.id === action.payload.id ? action.payload : bet)
         const editedBetsWithResult = state.bets.map((bet) => bet.id === action.payload ? action.payload : bet)
-        // const updatedUserWins = state.user.wins
-        // const updatedUserLosses =
+        const updatedUserWins = action.payload.result === "win" ? state.user.wins +=1 : state.user.wins
+        const updatedUserLosses = action.payload.result === "loss" ? state.user.losses +=1 : state.user.losses
         return {
             ...state,
             user: {
                 ...state.user,
                 bets: editedUserBetsWithResult,
-                // wins: updatedUserWins,
-                // losses: updatedUserLosses
+                wins: updatedUserWins,
+                losses: updatedUserLosses
             },
             bets: editedBetsWithResult
         }

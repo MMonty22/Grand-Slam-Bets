@@ -32,7 +32,6 @@ function EnterResult ({bet}) {
                 addResult(data)
             }
             else {
-                //setFormData({category: "", description: "", odds: ""})
                 const errors = data.errors.map(e => <li className='errors'>{e}</li>)
                 setErrorsState(errors)
             }
@@ -61,7 +60,6 @@ function EnterResult ({bet}) {
                 addResult(data)
             }
             else {
-                //setFormData({category: "", description: "", odds: ""})
                 const errors = data.errors.map(e => <li className='errors'>{e}</li>)
                 setErrorsState(errors)
             }
@@ -83,6 +81,12 @@ function EnterResult ({bet}) {
             </div>) : ""}
         {errorsState}
     </div> 
+    )
+    else if (bet.result === "win" || bet.result === "loss")
+    return (
+        <div>
+            <p>Result: {bet.result}</p>
+        </div>
     )
     else return (
         <div>

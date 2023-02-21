@@ -290,3 +290,14 @@ a:visited {
   -webkit-text-stroke: 0.05rem red;
   text-align: center;
 }
+
+#wButton {
+  background-color: green;
+  color: white;
+  margin-right: 1rem;
+}
+
+#lButton {
+  background-color: darkred;
+  color: white
+}
