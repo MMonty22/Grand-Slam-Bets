@@ -84,7 +84,7 @@ export function reducer(state, action) {
         }
     case 'updateBet': //payload is editedBetObj passed into function from PATCH request which has gameID, category, description and odds
         const editedUserBets = state.user.bets.map((bet) => bet.id === action.payload.id ? action.payload : bet)
-        const editedBets = state.bets.map((bet) => bet.id === action.payload ? action.payload : bet)
+        const editedBets = state.bets.map((bet) => bet.id === action.payload.id ? action.payload : bet)
         return {
             ...state,
             user: {
@@ -95,7 +95,7 @@ export function reducer(state, action) {
         }
     case 'updateBetResult': //payload is regular betObj plus result
         const editedUserBetsWithResult = state.user.bets.map((bet) => bet.id === action.payload.id ? action.payload : bet)
-        const editedBetsWithResult = state.bets.map((bet) => bet.id === action.payload ? action.payload : bet)
+        const editedBetsWithResult = state.bets.map((bet) => bet.id === action.payload.id ? action.payload : bet)
         const updatedUserWins = action.payload.result === "win" ? state.user.wins +=1 : state.user.wins
         const updatedUserLosses = action.payload.result === "loss" ? state.user.losses +=1 : state.user.losses
         return {
@@ -109,17 +109,21 @@ export function reducer(state, action) {
             bets: editedBetsWithResult
         }
     case 'deleteBet':
-        const betsMinusDeletedOne = state.bets.filter((bet)=> bet.id !== action.payload)
+        const betsMinusDeletedOne = state.bets.filter((bet) => bet.id !== action.payload.betID)
         //console.log('betsMinus', betsMinusDeletedOne)
-        const userBetsMinusDeletedOne = state.user.bets.filter((bet)=> bet.id !== action.payload)
+        const userBetsMinusDeletedOne = state.user.bets.filter((bet) => bet.id !== action.payload.betID)
         //console.log('userBetsMinus', userBetsMinusDeletedOne)
+        const commentsWithoutDeletedOne = state.comments.filter((com) => com.bet_id !== action.payload.relevantBet[0].id)
+        const userCommentsWithoutDeletedOne = state.user.comments.filter((com) => com.bet_id !== action.payload.relevantBet[0].id)
         return {
             ...state,
             user: {
                 ...state.user,
-                bets: userBetsMinusDeletedOne
+                bets: userBetsMinusDeletedOne,
+                comments: userCommentsWithoutDeletedOne
             },
-            bets: betsMinusDeletedOne
+            bets: betsMinusDeletedOne,
+            comments: commentsWithoutDeletedOne
         }
     case 'createComment': //payload is newCommentObj passed into function
         const updatedComments = [...state.comments, action.payload]

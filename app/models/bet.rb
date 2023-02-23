@@ -1,7 +1,7 @@
 class Bet < ApplicationRecord
     belongs_to :user
     belongs_to :game
-    has_many :comments
+    has_many :comments, dependent: :destroy
     validates :category, presence: true
     validates :description, presence: true
     validates :odds, presence: true

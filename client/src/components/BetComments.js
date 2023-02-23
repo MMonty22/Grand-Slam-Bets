@@ -20,7 +20,7 @@ function BetComments() {
                 //console.log('RU', relevantUser)
                 return <div key={com.id}>
                     <ul className='betComments'>
-                        <li>{`${relevantUser.username} said: ${com.text}`}</li>
+                        <li>{`${relevantUser?.username} said: ${com.text}`}</li>
                     </ul>
                 </div>
             })}

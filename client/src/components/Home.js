@@ -65,10 +65,11 @@ function Home() {
     }
 
     function handleBetDelete(betID) {
+        const relevantBet = state.bets.filter((bet) => bet.id === betID)
         fetch(`/bets/${betID}`, {
             method: 'DELETE',
         })
-        .then(res => removeBet(betID))
+        .then(res => removeBet(betID, relevantBet))
     }
 
     function handleCommentDelete(comID) {
@@ -78,8 +79,8 @@ function Home() {
         .then(res => removeComment(comID))
     }
 
-    function removeBet(betID) {
-        dispatch({type: "deleteBet", payload: betID})
+    function removeBet(betID, relevantBet) {
+        dispatch({type: "deleteBet", payload: {betID, relevantBet}})
     }
 
     function removeComment(comID) {
@@ -153,7 +154,7 @@ function Home() {
     })
 
     if (state.initialLoad) {
-        return <h3 className='headers'>"Loading..."</h3>
+        return <h3 className='headers'>Loading...</h3>
     }
     else if (state.loggedIn && showTodaysBets)
         return (
