@@ -61,7 +61,7 @@ function CommentEditForm() {
         <div>
         <h2 className='headers'>You Are Editing The Following Comment</h2>
         <form className="commentForm" onSubmit={handleSubmit}>
-                <label>Comment Text</label>
+                <label className='headers'>Comment Text</label>
                 <br />
                 <input id="text" type="text" value={commentEditFormData.text} onChange={handleChange}></input>
                 <br />
@@ -74,7 +74,7 @@ function CommentEditForm() {
         <div>
             <h2 className='headers'>You Are Editing The Following Comment</h2>
             <form className="commentForm" onSubmit={handleSubmit}>
-                    <label>Comment Text</label>
+                    <label className='headers'>Comment Text</label>
                     <br />
                     <input id="text" type="text" value={commentEditFormData.text} onChange={handleChange}></input>
                     <br />

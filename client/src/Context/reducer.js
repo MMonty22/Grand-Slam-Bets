@@ -137,7 +137,7 @@ export function reducer(state, action) {
             comments: updatedComments
         }
     case 'updateComment': //payload is editedCommentObj passed into function from PATCH request
-        const editedComments = state.comments.map((com) => com.id === action.payload ? action.payload : com)
+        const editedComments = state.comments.map((com) => com.id === action.payload.id ? action.payload : com)
         const editedUserComments = state.user.comments.map((com) => com.id === action.payload.id ? action.payload : com)
         return {
             ...state,
