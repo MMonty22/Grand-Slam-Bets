@@ -44,9 +44,10 @@ body {
   padding: 1rem;
   margin: 2rem;
   box-shadow: 3px 4px #504b55;
-  height: fit-content;
-  width: fit-content;
+  height: 6rem;
+  width: 20rem;
   text-align: center;
+  display: inline-block;
 }
 
 .userComments {
@@ -56,9 +57,10 @@ body {
   padding: 1rem;
   margin: 2rem;
   box-shadow: 3px 4px #504b55;
-  height: fit-content;
-  width: fit-content;
+  height: 6rem;
+  width: 20rem;
   text-align: center;
+  display: inline-block;
 }
 
 .todaysComments {
