@@ -1,6 +1,7 @@
 class Game < ApplicationRecord
     has_many :bets
     has_many :comments, through: :bets
+    has_many :users, through: :bets
     has_many :hitters
     has_many :pitchers
     validates :away_team, uniqueness: true
@@ -19,7 +20,7 @@ class Game < ApplicationRecord
             errors.add(:home_team_SP, "does not exist in our database, please check your spelling or try again")
         end
     end
-    
+
     def away_team_SP_exists
         unless Pitcher.all.find_by(name: self.away_team_SP)
             errors.add(:away_team_SP, "does not exist in our database, please check your spelling or try again")
