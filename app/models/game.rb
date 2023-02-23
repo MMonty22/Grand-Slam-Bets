@@ -36,9 +36,9 @@ class Game < ApplicationRecord
             end
         end
         Pitcher.all.each do |pitch|
-            if pitch.team == self.away_team
+            if pitch.name == self.away_team_SP
                 pitch.update(game_id: self.id)
-            elsif pitch.team == self.home_team
+            elsif pitch.name == self.home_team_SP
                 pitch.update(game_id: self.id)
             end
         end

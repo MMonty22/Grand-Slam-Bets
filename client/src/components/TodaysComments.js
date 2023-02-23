@@ -15,7 +15,7 @@ function TodaysComments({currentDate, handleCommentDelete}) {
     }
 
     return (
-        <div>
+        <div className='todaysComments'>
             {state.user?.comments?.map((com) => {
             const comDate = new Date(com.created_at).toLocaleDateString("en-US")
             if (comDate === currentDate) {

@@ -40,3 +40,6 @@ This will run the frontend server on http://localhost:4000/.
   - View all of the bets for each game and give your thoughts on the bet by clicking the leave a comment button or see what everyone else is saying by clicking the see comments button
   - Back on your home page you can edit or delete your bets and comments from today
     - The old bets and comments can not be edited but can be deleted
+  - The next day when the bet is now an old bet it can be given a result
+    - Simply click the enter result button then click the W for win or L for loss
+    - This will update the user's record and the bet's result

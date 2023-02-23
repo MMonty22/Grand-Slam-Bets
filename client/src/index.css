@@ -26,30 +26,15 @@ body {
   display: center;
 }
 
+.container {
+  display:grid;
+  justify-content: center;
+}
+
 .home {
   color: white;
-  display: grid;
-  grid-template-columns: 15rem 15rem 15rem 15rem;
-}
-
-#todayBets {
-  position: fixed;
-  margin-left: 10rem;
-}
-
-#todayComments {
-  position: fixed;
-  margin-left: 25rem;
-}
-
-#oldBets {
-  position: fixed;
-  margin-left: 43rem;
-}
-
-#oldComments {
-  position: fixed;
-  margin-left: 57rem;
+  display: flex;
+  margin: auto;
 }
 
 .userBets {
@@ -59,6 +44,9 @@ body {
   padding: 1rem;
   margin: 2rem;
   box-shadow: 3px 4px #504b55;
+  height: fit-content;
+  width: fit-content;
+  text-align: center;
 }
 
 .userComments {
@@ -68,7 +56,13 @@ body {
   padding: 1rem;
   margin: 2rem;
   box-shadow: 3px 4px #504b55;
-  vertical-align: auto;
+  height: fit-content;
+  width: fit-content;
+  text-align: center;
+}
+
+.todaysComments {
+  text-align: center;
 }
 
 .login {

@@ -5,7 +5,7 @@ function OlderComments({currentDate, handleCommentDelete}) {
     const { state, } = useContext(UserContext)
 
     return (
-        <div>
+        <div className='olderComments'>
             {state.user?.comments?.map((com) => {
             const comDate = new Date(com.created_at).toLocaleDateString("en-US")
             if (comDate < currentDate) {

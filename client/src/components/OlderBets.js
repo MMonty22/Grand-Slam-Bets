@@ -6,7 +6,7 @@ function OlderBets({currentDate, handleBetDelete}) {
     const { state, } = useContext(UserContext)
 
     return (
-        <div>
+        <div className='olderBets'>
             {state.user?.bets?.map((bet) => {
             const betDate = new Date(bet.created_at).toLocaleDateString("en-US")
             if (betDate < currentDate) {

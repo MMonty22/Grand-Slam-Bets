@@ -15,7 +15,7 @@ function TodaysBets({currentDate, handleBetDelete}) {
     }
 
     return (
-        <div>
+        <div className='todaysBets'>
             {state.user?.bets?.map((bet) => {
                 const betDate = new Date(bet.created_at).toLocaleDateString("en-US")
                 //console.log('betDate', betDate)
