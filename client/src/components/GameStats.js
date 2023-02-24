@@ -11,11 +11,11 @@ function GameStats() {
     //console.log('rg', relevantGame)
 
     function navigateToBets() {
-        navigate(`/games/${id}/bets`)
+        navigate(`/game/${id}/bets`)
     }
 
     function navigateToAddBetForm() {
-        navigate(`/games/${id}/bets/new`)
+        navigate(`/game/${id}/bets/new`)
     }
     
     return (

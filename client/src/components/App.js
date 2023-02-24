@@ -32,9 +32,9 @@ function App() {
             <Route exact path="/login" element={<Login username={username} setUsername={setUsername} password={password} setPassword={setPassword} passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} errors={errors} setErrors={setErrors}/>} />
             <Route exact path="/game" element={<Games />}/>
             <Route exact path="/game/new" element={<AddGameForm />}/>
-            <Route path="/games/:id" element={<GameStats />}/>
-            <Route path="/games/:id/bets" element={<Bets />} />
-            <Route path="/games/:id/bets/new" element={<AddBetForm />} />
+            <Route path="/game/:id" element={<GameStats />}/>
+            <Route path="/game/:id/bets" element={<Bets />} />
+            <Route path="/game/:id/bets/new" element={<AddBetForm />} />
             <Route path="/bets/:id/edit" element={<BetEditForm />} />
             <Route path="/bets/:id/comments" element={<BetComments />} />
             <Route path="/bets/:id/comments/new" element={<AddCommentForm />} />

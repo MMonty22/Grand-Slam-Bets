@@ -11,7 +11,7 @@ function TodaysBets({currentDate, handleBetDelete}) {
     }
 
     function navigateToGame(gameID) {
-        navigate(`/games/${gameID}`)
+        navigate(`/game/${gameID}`)
     }
 
     return (

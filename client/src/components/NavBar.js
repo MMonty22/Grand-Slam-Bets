@@ -8,7 +8,7 @@ function NavBar() {
             <NavLink to="/">
                 Home
             </NavLink>
-            <NavLink to="/games">
+            <NavLink to="/game">
                 Games
             </NavLink>
         </nav>

@@ -8,11 +8,11 @@ function Games() {
     const navigate = useNavigate()
 
     function navigateToPlayerStats(gameID) {
-        navigate(`/games/${gameID}`)
+        navigate(`/game/${gameID}`)
     }
 
     function navigateToAddGameForm() {
-        navigate('/games/new')
+        navigate('/game/new')
     }
 
     function navigateToLoginPage() {
@@ -33,7 +33,6 @@ function Games() {
             {state.games?.map((game) => 
                 <ul className='gameCards' key={game.id}>
                     <li onClick={() => navigateToPlayerStats(game.id)}>{`${game.away_team} vs ${game.home_team}`}</li>
-                    {/* <li>{`${game.pitchers[0].name} vs ${game.pitchers[1].name}`}</li> */}
                 </ul>)}
         </div>
     )
