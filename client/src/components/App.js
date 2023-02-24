@@ -30,8 +30,8 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/signup" element={<SignUp username={username} setUsername={setUsername} password={password} setPassword={setPassword} passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} errors={errors} setErrors={setErrors}/>}/>
             <Route exact path="/login" element={<Login username={username} setUsername={setUsername} password={password} setPassword={setPassword} passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} errors={errors} setErrors={setErrors}/>} />
-            <Route exact path="/games" element={<Games />}/>
-            <Route exact path="/games/new" element={<AddGameForm />}/>
+            <Route exact path="/game" element={<Games />}/>
+            <Route exact path="/game/new" element={<AddGameForm />}/>
             <Route path="/games/:id" element={<GameStats />}/>
             <Route path="/games/:id/bets" element={<Bets />} />
             <Route path="/games/:id/bets/new" element={<AddBetForm />} />
