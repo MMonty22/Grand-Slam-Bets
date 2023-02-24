@@ -24,7 +24,7 @@ function Games() {
     }
 
     if (state.initialLoad) {
-        return <h3 className='headers'>"Loading..."</h3>
+        return <h3 className='headers'>Loading...</h3>
     }
     else if (state.loggedIn)
     return (
