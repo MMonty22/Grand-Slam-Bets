@@ -19,7 +19,6 @@ function App() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [passwordConfirmation, setPasswordConfirmation] = useState("")
-  const [errors, setErrors] = useState([])
 
   return (
     <div className="App">
@@ -28,8 +27,8 @@ function App() {
         <h3 className='gsb'>Grand Slam Bets</h3>
         <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/signup" element={<SignUp username={username} setUsername={setUsername} password={password} setPassword={setPassword} passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} errors={errors} setErrors={setErrors}/>}/>
-            <Route exact path="/login" element={<Login username={username} setUsername={setUsername} password={password} setPassword={setPassword} passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} errors={errors} setErrors={setErrors}/>} />
+            <Route exact path="/signup" element={<SignUp username={username} setUsername={setUsername} password={password} setPassword={setPassword} passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} />}/>
+            <Route exact path="/login" element={<Login username={username} setUsername={setUsername} password={password} setPassword={setPassword} passwordConfirmation={passwordConfirmation} setPasswordConfirmation={setPasswordConfirmation} />} />
             <Route exact path="/game" element={<Games />}/>
             <Route exact path="/game/new" element={<AddGameForm />}/>
             <Route path="/game/:id" element={<GameStats />}/>

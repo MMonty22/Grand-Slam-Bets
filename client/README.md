@@ -43,3 +43,7 @@ This will run the frontend server on http://localhost:4000/.
   - The next day when the bet is now an old bet it can be given a result
     - Simply click the enter result button then click the W for win or L for loss
     - This will update the user's record and the bet's result
+
+## Notes
+- This is currently set up to only work with fake data from the seed file so in order to add a game you must use pitchers that were created from that file
+- The site is simply showing my capabilities and skills as a developer

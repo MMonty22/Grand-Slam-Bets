@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_many :comments
     has_secure_password
     validates :username, uniqueness: true
+    validates :username, presence: true
 
     def assign_wins_losses
         self.update(wins: 0)
