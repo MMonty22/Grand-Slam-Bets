@@ -12,7 +12,6 @@
 ```
 /phase-5-proj$ bundle install 
 /phase-5-proj$ rails db:migrate
-/phase-5-proj$ rails db:seed
 /phase-5-proj$ rails s  
 ```
 
@@ -44,6 +43,14 @@ This will run the frontend server on http://localhost:4000/.
     - Simply click the enter result button then click the W for win or L for loss
     - This will update the user's record and the bet's result
 
-## Notes
-- This is currently set up to only work with fake data from the seed file so in order to add a game you must use pitchers that were created from that file
-- The site is simply showing my capabilities and skills as a developer
+## How to Import Data
+- The CSV files are stored in the lib folder
+- The data can be updated from the CSV files by clicking enable content
+  - Once the new CSV file is updated, delete the unecessary rows above the data and first column on the left that has is numbering the players.
+  - Then create a new empty column and copy and paste the headers from the headers tab so the data will import with the correct headers.
+  - Then from the same headers tab, copy the hands VLOOKUP forumla and paste it into the bat_hand (on hitters CSV files) or throw_hand (for pitcher CSV files) column. Make sure there is a R, L, or S for each player in the bat_hand or throw_hand column.
+  - For the pitchers files make sure the last column on the right (should be ISO) is filled out all the way down, sometimes it is not and the data will not import correctly without it.
+- Once the above is done, replace the old CSV files in the lib folder with the new ones
+- Comment out the has_many and belongs_to relationships on the game.rb, hitter.rb and pitcher.rb
+- Then run the import rake task in your console with rails import:data
+- Lastly, uncomment out the has_many and belongs_to relationships so the proper relationships will be reinstated
