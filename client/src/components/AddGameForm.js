@@ -6,7 +6,7 @@ function AddGameForm() {
     const {dispatch} = useContext(UserContext);
     const navigate = useNavigate()
     const [errorsState, setErrorsState] = useState([])
-    const teamAbbrevitions = ["ARI", "ATL", "BAL", "BOS", "CHC", "CHW", "CIN", "CLE", "COL", "DET", "HOU", "KC", "LAA", "LAD", "MIA", "MIL", "MIN", "NYM", "NYY", "OAK", "PHI", "PIT", "SD", "SEA", "SFG", "STL", "TB", "TEX", "TOR", "WSH"]
+    const teamAbbrevitions = ["ARI", "ATL", "BAL", "BOS", "CHC", "CHW", "CIN", "CLE", "COL", "DET", "HOU", "KCR", "LAA", "LAD", "MIA", "MIL", "MIN", "NYM", "NYY", "OAK", "PHI", "PIT", "SDP", "SEA", "SFG", "STL", "TBR", "TEX", "TOR", "WSN"]
 
     const [formData, setFormData] = useState({
         away_team: "",
@@ -42,7 +42,7 @@ function AddGameForm() {
         .then(data => {
             if (!data.errors) {
                 addGame(data)
-                navigate(`/games`)
+                navigate(`/game`)
             }
             else {
                 setFormData({away_team: "", home_team: ""})
